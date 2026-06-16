@@ -477,7 +477,9 @@ class TestReader:
         assert seq_element.VR == "UN"
 
     def test_un_sequence_dont_infer_via_settings(self):
-        settings = config.Settings(infer_sq_for_un_vr=False, replace_un_with_known_vr=False)
+        settings = config.Settings(
+            infer_sq_for_un_vr=False, replace_un_with_known_vr=False
+        )
         ds = dcmread(get_testdata_file("UN_sequence.dcm"), settings=settings)
         seq_element = ds[0x4453100C]
         assert seq_element.VR == "UN"

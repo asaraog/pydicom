@@ -474,10 +474,20 @@ class TestDataElement:
         ds.decode()
         assert "UN" == ds[0x30040058].VR
 
-    @pytest.mark.parametrize("use_none, empty_value, use_global_settings", [(True, None, True), (False, "", True), (True, None, False), (False, "", False)])
-    def test_empty_text_values(self, use_none, empty_value, use_global_settings, no_datetime_conversion):
+    @pytest.mark.parametrize(
+        "use_none, empty_value, use_global_settings",
+        [
+            (True, None, True),
+            (False, "", True),
+            (True, None, False),
+            (False, "", False),
+        ],
+    )
+    def test_empty_text_values(
+        self, use_none, empty_value, use_global_settings, no_datetime_conversion
+    ):
         """Test that assigning an empty value behaves as expected."""
-       
+
         def check_empty_text_element(value):
             setattr(ds, tag_name, value)
             elem = ds[tag_name]
@@ -514,7 +524,7 @@ class TestDataElement:
             config.use_none_as_empty_text_VR_value = use_none
         else:
             settings = config.Settings(use_none_as_empty_text_VR_value=use_none)
-        
+
         ds = Dataset(settings=settings)
         # set value to new element
         for tag_name in text_vrs.values():

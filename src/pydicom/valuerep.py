@@ -304,7 +304,9 @@ def validate_pn(vr: str, value: Any) -> tuple[bool, str]:
     return True, ""
 
 
-def validate_pn_component(value: str | bytes, settings: config.Settings | None = None) -> None:
+def validate_pn_component(
+    value: str | bytes, settings: config.Settings | None = None
+) -> None:
     """Validate the value of a single component of VR PN for maximum length.
 
     Parameters
