@@ -727,16 +727,27 @@ class TestRawDataElement:
         yield
         config.convert_wrong_length_to_UN = old_value
 
-    @pytest.mark.parametrize("accept_wrong_length", [False], indirect=True)
+    @pytest.mark.parametrize("accept_wrong_length", [False, True], indirect=True)
     def test_wrong_bytes_length_exception(self, accept_wrong_length):
         """Check exception when number of raw bytes is not correct."""
+        # Check passed settings override global ones
+        if config.convert_wrong_length_to_UN:
+            settings = config.Settings(convert_wrong_length_to_UN=False)
+        else:
+            settings = None
         raw = RawDataElement(Tag(0x00190000), "FD", 1, b"1", 0, False, True)
         with pytest.raises(BytesLengthException):
-            convert_raw_data_element(raw)
+            convert_raw_data_element(raw, settings=settings)
 
-    @pytest.mark.parametrize("accept_wrong_length", [True], indirect=True)
+    @pytest.mark.parametrize("accept_wrong_length", [True, False], indirect=True)
     def test_wrong_bytes_length_convert_to_UN(self, accept_wrong_length):
         """Check warning and behavior for incorrect number of raw bytes."""
+        # Check passed settings override global ones
+        if config.convert_wrong_length_to_UN:
+            settings = None
+        else:
+            settings = config.Settings(convert_wrong_length_to_UN=True)
+        
         value = b"1"
         raw = RawDataElement(Tag(0x00190000), "FD", 1, value, 0, False, True)
         msg = (
@@ -747,7 +758,7 @@ class TestRawDataElement:
             r"Setting VR to 'UN'."
         )
         with pytest.warns(UserWarning, match=msg):
-            raw_elem = convert_raw_data_element(raw)
+            raw_elem = convert_raw_data_element(raw, settings=settings)
             assert "UN" == raw_elem.VR
             assert value == raw_elem.value
 

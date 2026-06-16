@@ -1126,11 +1126,11 @@ def enable_debugging():
 
 
 @pytest.fixture
-def enable_debugging_and_implicit():
+def enable_debugging_and_use_implicit_vr_switch(request):
     original_debug = config.debugging
     original_switch = config.assume_implicit_vr_switch
     config.debugging = True
-    config.assume_implicit_vr_switch = True
+    config.assume_implicit_vr_switch = request.param
     yield
     config.debugging = original_debug
     config.assume_implicit_vr_switch = original_switch
@@ -1218,7 +1218,12 @@ class TestUnknownVR:
             "Unknown VR 'XX' assuming explicit VR encoding with 2-byte length"
         ) in caplog.text
 
-    def test_unknown_implicit(self, enable_debugging_and_implicit, caplog):
+    @pytest.mark.parametrize("enable_debugging_and_use_implicit_vr_switch", [True, False], indirect=True)
+    def test_unknown_implicit(self, enable_debugging_and_use_implicit_vr_switch, caplog):
+        if config.assume_implicit_vr_switch:
+            settings = None
+        else:
+            settings = config.Settings(assume_implicit_vr_switch=True)
         with caplog.at_level(logging.WARNING, logger="pydicom"):
             read_dataset(
                 BytesIO(
@@ -1227,6 +1232,7 @@ class TestUnknownVR:
                 ),
                 False,
                 True,
+                settings=settings,
             )
 
         assert "Unknown VR '0x7878' assuming implicit VR encoding" in caplog.text
