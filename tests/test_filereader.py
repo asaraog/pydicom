@@ -1218,8 +1218,12 @@ class TestUnknownVR:
             "Unknown VR 'XX' assuming explicit VR encoding with 2-byte length"
         ) in caplog.text
 
-    @pytest.mark.parametrize("enable_debugging_and_use_implicit_vr_switch", [True, False], indirect=True)
-    def test_unknown_implicit(self, enable_debugging_and_use_implicit_vr_switch, caplog):
+    @pytest.mark.parametrize(
+        "enable_debugging_and_use_implicit_vr_switch", [True, False], indirect=True
+    )
+    def test_unknown_implicit(
+        self, enable_debugging_and_use_implicit_vr_switch, caplog
+    ):
         if config.assume_implicit_vr_switch:
             settings = None
         else:

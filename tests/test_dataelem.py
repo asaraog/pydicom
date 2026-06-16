@@ -747,7 +747,7 @@ class TestRawDataElement:
             settings = None
         else:
             settings = config.Settings(convert_wrong_length_to_UN=True)
-        
+
         value = b"1"
         raw = RawDataElement(Tag(0x00190000), "FD", 1, value, 0, False, True)
         msg = (
