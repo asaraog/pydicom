@@ -304,7 +304,7 @@ def validate_pn(vr: str, value: Any) -> tuple[bool, str]:
     return True, ""
 
 
-def validate_pn_component(value: str | bytes) -> None:
+def validate_pn_component(value: str | bytes, settings: config.Settings | None = None) -> None:
     """Validate the value of a single component of VR PN for maximum length.
 
     Parameters
@@ -318,10 +318,11 @@ def validate_pn_component(value: str | bytes) -> None:
         If the validation fails and the validation mode is set to
         `RAISE`.
     """
+    settings = settings or config.settings
     validate_value(
         "PN",
         value,
-        config.settings.writing_validation_mode,
+        settings.writing_validation_mode,
         validate_pn_component_length,
     )
 

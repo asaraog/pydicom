@@ -476,6 +476,12 @@ class TestReader:
         seq_element = ds[0x4453100C]
         assert seq_element.VR == "UN"
 
+    def test_un_sequence_dont_infer_via_settings(self):
+        settings = config.Settings(infer_sq_for_un_vr=False, replace_un_with_known_vr=False)
+        ds = dcmread(get_testdata_file("UN_sequence.dcm"), settings=settings)
+        seq_element = ds[0x4453100C]
+        assert seq_element.VR == "UN"
+
     def test_no_meta_group_length(self, no_datetime_conversion):
         """Read file with no group length in file meta."""
         # Issue 108 -- iView example file with no group length (0002,0002)
