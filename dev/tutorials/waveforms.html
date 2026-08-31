@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/css/pydicom.css?v=0f9d927c" />
@@ -41,10 +41,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
 
     <script src="../_static/documentation_options.js?v=d3077db3"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
@@ -55,7 +55,7 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/waveforms';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.20.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.21.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = '_static/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -557,7 +557,7 @@ intervals.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pydicom</span><span class="w"> </span><span class="kn">import</span> <span class="n">examples</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">waveform</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">SOPClassUID</span><span class="o">.</span><span class="n">name</span>
-<span class="go">&#39;12-lead ECG Waveform Storage&#39;</span>
+<span class="go">'12-lead ECG Waveform Storage'</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">waveforms</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">WaveformSequence</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">waveforms</span><span class="p">)</span>
 <span class="go">2</span>
@@ -567,9 +567,9 @@ intervals.</p>
 waveforms that are synchronised at common sampling frequency.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">multiplex</span> <span class="o">=</span> <span class="n">waveforms</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">multiplex</span><span class="o">.</span><span class="n">MultiplexGroupLabel</span>
-<span class="go">&#39;RHYTHM&#39;</span>
+<span class="go">'RHYTHM'</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">multiplex</span><span class="o">.</span><span class="n">SamplingFrequency</span>  <span class="c1"># in Hz</span>
-<span class="go">&quot;1000.0&quot;</span>
+<span class="go">"1000.0"</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">multiplex</span><span class="o">.</span><span class="n">NumberOfWaveformChannels</span>
 <span class="go">12</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">multiplex</span><span class="o">.</span><span class="n">NumberOfWaveformSamples</span>
@@ -582,10 +582,10 @@ defining information for each channel is available in the (5400,0200)
 <em>Channel Definition Sequence</em>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">ii</span><span class="p">,</span> <span class="n">channel</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">multiplex</span><span class="o">.</span><span class="n">ChannelDefinitionSequence</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">source</span> <span class="o">=</span> <span class="n">channel</span><span class="o">.</span><span class="n">ChannelSourceSequence</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">CodeMeaning</span>
-<span class="gp">... </span>    <span class="n">units</span> <span class="o">=</span> <span class="s1">&#39;unitless&#39;</span>
-<span class="gp">... </span>    <span class="k">if</span> <span class="s1">&#39;ChannelSensitivity&#39;</span> <span class="ow">in</span> <span class="n">channel</span><span class="p">:</span>  <span class="c1"># Type 1C, may be absent</span>
+<span class="gp">... </span>    <span class="n">units</span> <span class="o">=</span> <span class="s1">'unitless'</span>
+<span class="gp">... </span>    <span class="k">if</span> <span class="s1">'ChannelSensitivity'</span> <span class="ow">in</span> <span class="n">channel</span><span class="p">:</span>  <span class="c1"># Type 1C, may be absent</span>
 <span class="gp">... </span>        <span class="n">units</span> <span class="o">=</span> <span class="n">channel</span><span class="o">.</span><span class="n">ChannelSensitivityUnitsSequence</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">CodeMeaning</span>
-<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Channel </span><span class="si">{</span><span class="n">ii</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">source</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">units</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Channel </span><span class="si">{</span><span class="n">ii</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">source</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">units</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
 <span class="gp">...</span>
 <span class="go">Channel 1: Lead I (Einthoven) (microvolt)</span>
 <span class="go">Channel 2: Lead II (microvolt)</span>
@@ -609,7 +609,7 @@ defining information for each channel is available in the (5400,0200)
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">multiplex</span><span class="o">.</span><span class="n">WaveformBitsAllocated</span>
 <span class="go">16</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">multiplex</span><span class="o">.</span><span class="n">WaveformSampleInterpretation</span>
-<span class="go">&#39;SS&#39;</span>
+<span class="go">'SS'</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">multiplex</span><span class="o">.</span><span class="n">WaveformData</span><span class="p">)</span>
 <span class="go">240000</span>
 </pre></div>
@@ -647,9 +647,9 @@ function:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">raw</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;unitless&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"unitless"</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">arr</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;μV&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"μV"</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -678,14 +678,14 @@ using signed 16-bit integers, but you can use signed or unsigned 8, 16, 32 or
 <p>First we create two <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarrays</span></code></a> with our waveform data:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ch1</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">15</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int16&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ch2</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">15</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int16&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ch1</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">15</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'int16'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ch2</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">15</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'int16'</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Next we create the new multiplex group that will contain the waveforms:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pydicom.dataset</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dataset</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">new</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">new</span><span class="o">.</span><span class="n">WaveformOriginality</span> <span class="o">=</span> <span class="s2">&quot;ORIGINAL&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">new</span><span class="o">.</span><span class="n">WaveformOriginality</span> <span class="o">=</span> <span class="s2">"ORIGINAL"</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">new</span><span class="o">.</span><span class="n">NumberOfWaveformChannels</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">new</span><span class="o">.</span><span class="n">NumberOfWaveformSamples</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">new</span><span class="o">.</span><span class="n">SamplingFrequency</span> <span class="o">=</span> <span class="mf">1000.0</span>
@@ -701,14 +701,14 @@ to include a <em>Channel Sensitivity</em>, so our data will be unit-less). If yo
 to do this for real you would obviously use an official coding scheme.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">new</span><span class="o">.</span><span class="n">ChannelDefinitionSequence</span> <span class="o">=</span> <span class="p">[</span><span class="n">Dataset</span><span class="p">(),</span> <span class="n">Dataset</span><span class="p">()]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">chdef_seq</span> <span class="o">=</span> <span class="n">new</span><span class="o">.</span><span class="n">ChannelDefinitionSequence</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">chdef</span><span class="p">,</span> <span class="n">curve_type</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">chdef_seq</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;cosine&quot;</span><span class="p">,</span> <span class="s2">&quot;sine&quot;</span><span class="p">]):</span>
-<span class="gp">... </span>    <span class="n">chdef</span><span class="o">.</span><span class="n">ChannelSampleSkew</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">chdef</span><span class="p">,</span> <span class="n">curve_type</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">chdef_seq</span><span class="p">,</span> <span class="p">[</span><span class="s2">"cosine"</span><span class="p">,</span> <span class="s2">"sine"</span><span class="p">]):</span>
+<span class="gp">... </span>    <span class="n">chdef</span><span class="o">.</span><span class="n">ChannelSampleSkew</span> <span class="o">=</span> <span class="s2">"0"</span>
 <span class="gp">... </span>    <span class="n">chdef</span><span class="o">.</span><span class="n">WaveformBitsStored</span> <span class="o">=</span> <span class="mi">16</span>
 <span class="gp">... </span>    <span class="n">chdef</span><span class="o">.</span><span class="n">ChannelSourceSequence</span> <span class="o">=</span> <span class="p">[</span><span class="n">Dataset</span><span class="p">()]</span>
 <span class="gp">... </span>    <span class="n">source</span> <span class="o">=</span> <span class="n">chdef</span><span class="o">.</span><span class="n">ChannelSourceSequence</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="gp">... </span>    <span class="n">source</span><span class="o">.</span><span class="n">CodeValue</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
-<span class="gp">... </span>    <span class="n">source</span><span class="o">.</span><span class="n">CodingSchemeDesignator</span> <span class="o">=</span> <span class="s2">&quot;PYDICOM&quot;</span>
-<span class="gp">... </span>    <span class="n">source</span><span class="o">.</span><span class="n">CodingSchemeVersion</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
+<span class="gp">... </span>    <span class="n">source</span><span class="o">.</span><span class="n">CodeValue</span> <span class="o">=</span> <span class="s2">"1.0"</span>
+<span class="gp">... </span>    <span class="n">source</span><span class="o">.</span><span class="n">CodingSchemeDesignator</span> <span class="o">=</span> <span class="s2">"PYDICOM"</span>
+<span class="gp">... </span>    <span class="n">source</span><span class="o">.</span><span class="n">CodingSchemeVersion</span> <span class="o">=</span> <span class="s2">"1.0"</span>
 <span class="gp">... </span>    <span class="n">source</span><span class="o">.</span><span class="n">CodeMeaning</span> <span class="o">=</span> <span class="n">curve_type</span>
 </pre></div>
 </div>
@@ -724,17 +724,17 @@ Interpretation</em> element values to match our data representation type:</p>
 <span class="go">(126, 2)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">new</span><span class="o">.</span><span class="n">WaveformData</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">tobytes</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">new</span><span class="o">.</span><span class="n">WaveformBitsAllocated</span> <span class="o">=</span> <span class="mi">16</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">new</span><span class="o">.</span><span class="n">WaveformSampleInterpretation</span> <span class="o">=</span> <span class="s1">&#39;SS&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">new</span><span class="o">.</span><span class="n">WaveformSampleInterpretation</span> <span class="o">=</span> <span class="s1">'SS'</span>
 </pre></div>
 </div>
 <p>And finally add the new multiplex group to our example dataset and save:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">WaveformSequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">save_as</span><span class="p">(</span><span class="s2">&quot;my_waveform.dcm&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">save_as</span><span class="p">(</span><span class="s2">"my_waveform.dcm"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>We should now be able to plot our new waveforms:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pydicom</span><span class="w"> </span><span class="kn">import</span> <span class="n">dcmread</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">dcmread</span><span class="p">(</span><span class="s2">&quot;my_waveform.dcm&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">dcmread</span><span class="p">(</span><span class="s2">"my_waveform.dcm"</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">arr</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">waveform_array</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">arr</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
@@ -813,8 +813,8 @@ Interpretation</em> element values to match our data representation type:</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -848,7 +848,7 @@ Interpretation</em> element values to match our data representation type:</p>
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
 </p></div>
       
     </div>

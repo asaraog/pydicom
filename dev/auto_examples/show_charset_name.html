@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/css/pydicom.css?v=0f9d927c" />
@@ -41,10 +41,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
 
     <script src="../_static/documentation_options.js?v=d3077db3"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
@@ -55,7 +55,7 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'auto_examples/show_charset_name';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.20.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.21.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = '_static/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -545,7 +545,7 @@ to download the full example code.</p>
 
 <span class="nb">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">)</span>
 
-<span class="n">default_encoding</span> <span class="o">=</span> <span class="s2">&quot;iso8859&quot;</span>
+<span class="n">default_encoding</span> <span class="o">=</span> <span class="s2">"iso8859"</span>
 
 <span class="n">root</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/tkinter.html#tkinter.Tk" title="tkinter.Tk" class="sphx-glr-backref-module-tkinter sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">tkinter</span><span class="o">.</span><span class="n">Tk</span></a><span class="p">()</span>
 
@@ -553,24 +553,24 @@ to download the full example code.</p>
 <span class="n">person_names</span> <span class="o">=</span> <span class="p">[</span>
     <a href="../reference/generated/pydicom.valuerep.PersonName.html#pydicom.valuerep.PersonName" title="pydicom.valuerep.PersonName" class="sphx-glr-backref-module-pydicom-valuerep sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">PersonName</span></a><span class="p">(</span>
         <span class="c1"># DICOM standard 2008-PS3.5 H.3 p98</span>
-        <span class="sa">b</span><span class="s2">&quot;Yamada^Tarou=</span><span class="se">\033</span><span class="s2">$B;3ED</span><span class="se">\033</span><span class="s2">(B^</span><span class="se">\033</span><span class="s2">$BB@O:&quot;</span>
-        <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">(B=</span><span class="se">\033</span><span class="s2">$B$d$^$@</span><span class="se">\033</span><span class="s2">(B^</span><span class="se">\033</span><span class="s2">$B$?$m$&amp;</span><span class="se">\033</span><span class="s2">(B&quot;</span><span class="p">,</span>
-        <span class="p">[</span><span class="n">default_encoding</span><span class="p">,</span> <span class="s2">&quot;iso2022_jp&quot;</span><span class="p">],</span>
+        <span class="sa">b</span><span class="s2">"Yamada^Tarou=</span><span class="se">\033</span><span class="s2">$B;3ED</span><span class="se">\033</span><span class="s2">(B^</span><span class="se">\033</span><span class="s2">$BB@O:"</span>
+        <span class="sa">b</span><span class="s2">"</span><span class="se">\033</span><span class="s2">(B=</span><span class="se">\033</span><span class="s2">$B$d$^$@</span><span class="se">\033</span><span class="s2">(B^</span><span class="se">\033</span><span class="s2">$B$?$m$&amp;</span><span class="se">\033</span><span class="s2">(B"</span><span class="p">,</span>
+        <span class="p">[</span><span class="n">default_encoding</span><span class="p">,</span> <span class="s2">"iso2022_jp"</span><span class="p">],</span>
     <span class="p">),</span>
     <span class="c1"># DICOM standard 2008-PS3.5 J.3 p 105</span>
     <a href="../reference/generated/pydicom.valuerep.PersonName.html#pydicom.valuerep.PersonName" title="pydicom.valuerep.PersonName" class="sphx-glr-backref-module-pydicom-valuerep sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">PersonName</span></a><span class="p">(</span>
-        <span class="sa">b</span><span class="s2">&quot;Wang^XiaoDong=</span><span class="se">\xcd\xf5\x5e\xd0\xa1\xb6\xab</span><span class="s2">=&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">default_encoding</span><span class="p">,</span> <span class="s2">&quot;GB18030&quot;</span><span class="p">]</span>
+        <span class="sa">b</span><span class="s2">"Wang^XiaoDong=</span><span class="se">\xcd\xf5\x5e\xd0\xa1\xb6\xab</span><span class="s2">="</span><span class="p">,</span> <span class="p">[</span><span class="n">default_encoding</span><span class="p">,</span> <span class="s2">"GB18030"</span><span class="p">]</span>
     <span class="p">),</span>
     <span class="c1"># DICOM standard 2008-PS3.5 J.1 p 104</span>
     <a href="../reference/generated/pydicom.valuerep.PersonName.html#pydicom.valuerep.PersonName" title="pydicom.valuerep.PersonName" class="sphx-glr-backref-module-pydicom-valuerep sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">PersonName</span></a><span class="p">(</span>
-        <span class="sa">b</span><span class="s2">&quot;Wang^XiaoDong=</span><span class="se">\xe7\x8e\x8b\x5e\xe5\xb0\x8f\xe6\x9d\xb1</span><span class="s2">=&quot;</span><span class="p">,</span>
-        <span class="p">[</span><span class="n">default_encoding</span><span class="p">,</span> <span class="s2">&quot;UTF-8&quot;</span><span class="p">],</span>
+        <span class="sa">b</span><span class="s2">"Wang^XiaoDong=</span><span class="se">\xe7\x8e\x8b\x5e\xe5\xb0\x8f\xe6\x9d\xb1</span><span class="s2">="</span><span class="p">,</span>
+        <span class="p">[</span><span class="n">default_encoding</span><span class="p">,</span> <span class="s2">"UTF-8"</span><span class="p">],</span>
     <span class="p">),</span>
     <span class="c1"># DICOM standard 2008-PS3.5 I.2 p 101</span>
     <a href="../reference/generated/pydicom.valuerep.PersonName.html#pydicom.valuerep.PersonName" title="pydicom.valuerep.PersonName" class="sphx-glr-backref-module-pydicom-valuerep sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">PersonName</span></a><span class="p">(</span>
-        <span class="sa">b</span><span class="s2">&quot;Hong^Gildong=</span><span class="se">\033</span><span class="s2">$)C</span><span class="se">\373\363</span><span class="s2">^</span><span class="se">\033</span><span class="s2">$)C</span><span class="se">\321\316\324\327</span><span class="s2">=&quot;</span>
-        <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">$)C</span><span class="se">\310\253</span><span class="s2">^</span><span class="se">\033</span><span class="s2">$)C</span><span class="se">\261\346\265\277</span><span class="s2">&quot;</span><span class="p">,</span>
-        <span class="p">[</span><span class="n">default_encoding</span><span class="p">,</span> <span class="s2">&quot;euc_kr&quot;</span><span class="p">],</span>
+        <span class="sa">b</span><span class="s2">"Hong^Gildong=</span><span class="se">\033</span><span class="s2">$)C</span><span class="se">\373\363</span><span class="s2">^</span><span class="se">\033</span><span class="s2">$)C</span><span class="se">\321\316\324\327</span><span class="s2">="</span>
+        <span class="sa">b</span><span class="s2">"</span><span class="se">\033</span><span class="s2">$)C</span><span class="se">\310\253</span><span class="s2">^</span><span class="se">\033</span><span class="s2">$)C</span><span class="se">\261\346\265\277</span><span class="s2">"</span><span class="p">,</span>
+        <span class="p">[</span><span class="n">default_encoding</span><span class="p">,</span> <span class="s2">"euc_kr"</span><span class="p">],</span>
     <span class="p">),</span>
 <span class="p">]</span>
 <span class="k">for</span> <span class="n">person_name</span> <span class="ow">in</span> <span class="n">person_names</span><span class="p">:</span>
@@ -639,8 +639,8 @@ to download the full example code.</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -674,7 +674,7 @@ to download the full example code.</p>
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
 </p></div>
       
     </div>

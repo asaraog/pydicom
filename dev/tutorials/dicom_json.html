@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/css/pydicom.css?v=0f9d927c" />
@@ -41,10 +41,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
 
     <script src="../_static/documentation_options.js?v=d3077db3"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
@@ -55,7 +55,7 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/dicom_json';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.20.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.21.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = '_static/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -531,9 +531,9 @@ and into a deserialized JSON dictionary:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">pydicom</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">pydicom</span><span class="o">.</span><span class="n">examples</span><span class="o">.</span><span class="n">ct</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">to_json</span><span class="p">()</span>
-<span class="go">&#39;{&quot;00080005&quot;: {&quot;Value&quot;: [&quot;ISO_IR 100&quot;], &quot;vr&quot;: &quot;CS&quot;}, &quot;00080008&quot;: {&quot;Value&quot;:...</span>
+<span class="go">'{"00080005": {"Value": ["ISO_IR 100"], "vr": "CS"}, "00080008": {"Value":...</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">to_json_dict</span><span class="p">()</span>
-<span class="go">{&quot;00080005&quot;: {&quot;Value&quot;: [&quot;ISO_IR 100&quot;], &quot;vr&quot;: &quot;CS&quot;}, &quot;00080008&quot;: {&quot;Value&quot;:...</span>
+<span class="go">{"00080005": {"Value": ["ISO_IR 100"], "vr": "CS"}, "00080008": {"Value":...</span>
 </pre></div>
 </div>
 <p>Which of these methods you need depends on your use case. The JSON string
@@ -548,10 +548,10 @@ dictionaries deserialized from a JSON string instead, so
 <p>Similar, a dataset can be created both from a JSON string and from a JSON
 dictionary. There is only a single function to handle both cases:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pydicom.dataset</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dataset</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">Dataset</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span><span class="s1">&#39;{&quot;00080005&quot;: {&quot;Value&quot;: [&quot;ISO_IR 100&quot;], &quot;vr&quot;: &quot;CS&quot;}}&#39;</span><span class="p">)</span>
-<span class="go">(0008, 0005) Specific Character Set              CS: u&#39;ISO_IR 100&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">Dataset</span><span class="o">.</span><span class="n">from_json</span><span class="p">({</span><span class="s2">&quot;00080005&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Value&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;ISO_IR 100&quot;</span><span class="p">],</span> <span class="s2">&quot;vr&quot;</span><span class="p">:</span> <span class="s2">&quot;CS&quot;</span><span class="p">}})</span>
-<span class="go">(0008, 0005) Specific Character Set              CS: u&#39;ISO_IR 100&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Dataset</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span><span class="s1">'{"00080005": {"Value": ["ISO_IR 100"], "vr": "CS"}}'</span><span class="p">)</span>
+<span class="go">(0008, 0005) Specific Character Set              CS: u'ISO_IR 100'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Dataset</span><span class="o">.</span><span class="n">from_json</span><span class="p">({</span><span class="s2">"00080005"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Value"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"ISO_IR 100"</span><span class="p">],</span> <span class="s2">"vr"</span><span class="p">:</span> <span class="s2">"CS"</span><span class="p">}})</span>
+<span class="go">(0008, 0005) Specific Character Set              CS: u'ISO_IR 100'</span>
 </pre></div>
 </div>
 <p>The conversion in both directions is symmetric:</p>
@@ -593,7 +593,7 @@ the stored <code class="docutils literal notranslate"><span class="pre">BulkData
 <span class="gp">&gt;&gt;&gt; </span>    <span class="k">return</span> <span class="n">data_retrieved_via_uri</span><span class="p">(</span><span class="n">bulk_data_uri</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">json_data</span> <span class="o">=</span> <span class="p">{</span>
-<span class="gp">&gt;&gt;&gt; </span>    <span class="s2">&quot;00091002&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;vr&quot;</span><span class="p">:</span> <span class="s2">&quot;OB&quot;</span><span class="p">,</span> <span class="s2">&quot;BulkDataURI&quot;</span><span class="p">:</span> <span class="s2">&quot;https://my.wado.org/123&quot;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="s2">"00091002"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"vr"</span><span class="p">:</span> <span class="s2">"OB"</span><span class="p">,</span> <span class="s2">"BulkDataURI"</span><span class="p">:</span> <span class="s2">"https://my.wado.org/123"</span><span class="p">}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">Dataset</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span><span class="n">json_data</span><span class="p">,</span> <span class="n">bulk_data_uri_handler</span><span class="o">=</span><span class="n">bulk_data_reader</span><span class="p">)</span>
 </pre></div>
@@ -604,7 +604,7 @@ the stored <code class="docutils literal notranslate"><span class="pre">BulkData
 <span class="gp">&gt;&gt;&gt; </span>    <span class="k">return</span> <span class="n">data_retrieved_for_tag_and_vr_via_uri</span><span class="p">(</span><span class="n">tag</span><span class="p">,</span> <span class="n">vr</span><span class="p">,</span> <span class="n">bulk_data_uri</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">json_data</span> <span class="o">=</span> <span class="p">{</span>
-<span class="gp">&gt;&gt;&gt; </span>    <span class="s2">&quot;00091002&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;vr&quot;</span><span class="p">:</span> <span class="s2">&quot;OB&quot;</span><span class="p">,</span> <span class="s2">&quot;BulkDataURI&quot;</span><span class="p">:</span> <span class="s2">&quot;https://my.wado.org/123&quot;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="s2">"00091002"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"vr"</span><span class="p">:</span> <span class="s2">"OB"</span><span class="p">,</span> <span class="s2">"BulkDataURI"</span><span class="p">:</span> <span class="s2">"https://my.wado.org/123"</span><span class="p">}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">Dataset</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span><span class="n">json_data</span><span class="p">,</span> <span class="n">bulk_data_uri_handler</span><span class="o">=</span><span class="n">bulk_data_reader</span><span class="p">)</span>
 </pre></div>
@@ -678,8 +678,8 @@ the stored <code class="docutils literal notranslate"><span class="pre">BulkData
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -713,7 +713,7 @@ the stored <code class="docutils literal notranslate"><span class="pre">BulkData
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
 </p></div>
       
     </div>

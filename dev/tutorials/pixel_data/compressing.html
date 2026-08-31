@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/pydicom.css?v=0f9d927c" />
@@ -41,10 +41,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
 
     <script src="../../_static/documentation_options.js?v=d3077db3"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
@@ -55,7 +55,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/pixel_data/compressing';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.20.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.21.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = '_static/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -589,9 +589,9 @@ Syntax UID</em>:</p>
 <span class="n">ds</span><span class="o">.</span><span class="n">HighBit</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">BitsStored</span> <span class="o">-</span> <span class="mi">1</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">PixelRepresentation</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">SamplesPerPixel</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">PhotometricInterpretation</span> <span class="o">=</span> <span class="s2">&quot;MONOCHROME2&quot;</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">PhotometricInterpretation</span> <span class="o">=</span> <span class="s2">"MONOCHROME2"</span>
 
-<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">ds</span><span class="o">.</span><span class="n">Rows</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">Columns</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;uint8&quot;</span><span class="p">)</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">ds</span><span class="o">.</span><span class="n">Rows</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">Columns</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">"uint8"</span><span class="p">)</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">compress</span><span class="p">(</span><span class="n">RLELossless</span><span class="p">,</span> <span class="n">arr</span><span class="p">)</span>
 
 <span class="k">assert</span> <span class="n">ds</span><span class="o">.</span><span class="n">file_meta</span><span class="o">.</span><span class="n">TransferSyntaxUID</span> <span class="o">==</span> <span class="n">RLELossless</span>
@@ -612,18 +612,18 @@ such as <em>Rows</em>, <em>Columns</em>, <em>Samples per Pixel</em>, etc. If the
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pydicom</span><span class="w"> </span><span class="kn">import</span> <span class="n">examples</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pydicom.uid</span><span class="w"> </span><span class="kn">import</span> <span class="n">RLELossless</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">ct</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">ds</span><span class="o">.</span><span class="n">Rows</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">Columns</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;&lt;i2&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">ds</span><span class="o">.</span><span class="n">Rows</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">Columns</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">'&lt;i2'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">compress</span><span class="p">(</span><span class="n">RLELossless</span><span class="p">,</span> <span class="n">arr</span><span class="p">)</span>
 <span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
-  File <span class="nb">&quot;.../pydicom/src/pydicom/dataset.py&quot;</span>, line <span class="m">1957</span>, in <span class="n">compress</span>
+  File <span class="nb">"&lt;stdin&gt;"</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+  File <span class="nb">".../pydicom/src/pydicom/dataset.py"</span>, line <span class="m">1957</span>, in <span class="n">compress</span>
 <span class="w">    </span><span class="n">encoded</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">frame_iterator</span><span class="p">]</span>
 <span class="w">              </span><span class="pm">^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
-  File <span class="nb">&quot;.../pydicom/pixels/encoders/base.py&quot;</span>, line <span class="m">678</span>, in <span class="n">iter_encode</span>
+  File <span class="nb">".../pydicom/pixels/encoders/base.py"</span>, line <span class="m">678</span>, in <span class="n">iter_encode</span>
 <span class="w">    </span><span class="n">runner</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span>
-  File <span class="nb">&quot;.../pydicom/pixels/encoders/base.py&quot;</span>, line <span class="m">304</span>, in <span class="n">validate</span>
+  File <span class="nb">".../pydicom/pixels/encoders/base.py"</span>, line <span class="m">304</span>, in <span class="n">validate</span>
 <span class="w">    </span><span class="bp">self</span><span class="o">.</span><span class="n">_validate_array</span><span class="p">()</span>
-  File <span class="nb">&quot;.../pydicom/pixels/encoders/base.py&quot;</span>, line <span class="m">333</span>, in <span class="n">_validate_array</span>
+  File <span class="nb">".../pydicom/pixels/encoders/base.py"</span>, line <span class="m">333</span>, in <span class="n">_validate_array</span>
 <span class="w">    </span><span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
 <span class="gr">  ValueError</span>: <span class="n">Mismatch between the expected ndarray shape (128, 128) and the actual shape (128, 129)</span>
 </pre></div>
@@ -631,7 +631,7 @@ such as <em>Rows</em>, <em>Columns</em>, <em>Samples per Pixel</em>, etc. If the
 <p>When there are multiple plugins available for compressing the given transfer syntax
 a <a class="reference internal" href="../../guides/plugin_table.html#guide-encoding-plugins"><span class="std std-ref">specific encoding plugin</span></a> can be used by passing
 the plugin name via the <cite>encoding_plugin</cite> argument:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">compress</span><span class="p">(</span><span class="n">RLELossless</span><span class="p">,</span> <span class="n">encoding_plugin</span><span class="o">=</span><span class="s1">&#39;pylibjpeg&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">compress</span><span class="p">(</span><span class="n">RLELossless</span><span class="p">,</span> <span class="n">encoding_plugin</span><span class="o">=</span><span class="s1">'pylibjpeg'</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The RLE compression method is well supported by DICOM applications and can
@@ -734,12 +734,12 @@ prior to compression:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pydicom.uid</span><span class="w"> </span><span class="kn">import</span> <span class="n">JPEG2000Lossless</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">rgb_color</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">PhotometricInterpretation</span>
-<span class="go">&quot;RGB&quot;</span>
+<span class="go">"RGB"</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">compress</span><span class="p">(</span><span class="n">JPEG2000Lossless</span><span class="p">)</span>  <span class="c1"># No MCT applied</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">PixelData</span><span class="p">)</span>
 <span class="go">334412</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">rgb_color</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">PhotometricInterpretation</span> <span class="o">=</span> <span class="s2">&quot;YBR_RCT&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">PhotometricInterpretation</span> <span class="o">=</span> <span class="s2">"YBR_RCT"</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">compress</span><span class="p">(</span><span class="n">JPEG2000Lossless</span><span class="p">)</span>  <span class="c1"># MCT applied</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">PixelData</span><span class="p">)</span>
 <span class="go">152342</span>
@@ -809,7 +809,7 @@ compressed data.</p>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">ct</span>
 
 <span class="c1"># Use third-party package to compress</span>
-<span class="c1"># Let&#39;s assume it compresses to JPEG Baseline</span>
+<span class="c1"># Let's assume it compresses to JPEG Baseline</span>
 <span class="n">frames</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">bytes</span><span class="p">]</span> <span class="o">=</span> <span class="n">third_party_compression_func</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 
 <span class="c1"># Set the *Transfer Syntax UID* appropriately</span>
@@ -818,15 +818,15 @@ compressed data.</p>
 
 <span class="c1"># Basic encapsulation</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">PixelData</span> <span class="o">=</span> <span class="n">encapsulate</span><span class="p">(</span><span class="n">frames</span><span class="p">)</span>
-<span class="n">ds</span><span class="p">[</span><span class="s2">&quot;PixelData&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">VR</span> <span class="o">=</span> <span class="s2">&quot;OB&quot;</span>  <span class="c1"># always for encapsulated pixel data</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">save_as</span><span class="p">(</span><span class="s2">&quot;ct_compressed_basic.dcm&quot;</span><span class="p">)</span>
+<span class="n">ds</span><span class="p">[</span><span class="s2">"PixelData"</span><span class="p">]</span><span class="o">.</span><span class="n">VR</span> <span class="o">=</span> <span class="s2">"OB"</span>  <span class="c1"># always for encapsulated pixel data</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">save_as</span><span class="p">(</span><span class="s2">"ct_compressed_basic.dcm"</span><span class="p">)</span>
 
 <span class="c1"># Extended encapsulation</span>
 <span class="n">result</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">bytes</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">]</span> <span class="o">=</span> <span class="n">encapsulate_extended</span><span class="p">(</span><span class="n">frames</span><span class="p">)</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">PixelData</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">ExtendedOffsetTable</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">ExtendedOffsetTableLength</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">save_as</span><span class="p">(</span><span class="s2">&quot;ct_compressed_ext.dcm&quot;</span><span class="p">)</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">save_as</span><span class="p">(</span><span class="s2">"ct_compressed_ext.dcm"</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -857,7 +857,7 @@ process apply. For example, to use a <a class="reference internal" href="../../g
 you can pass its name via the <cite>decoding_plugin</cite> argument:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pydicom</span><span class="w"> </span><span class="kn">import</span> <span class="n">examples</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">jpeg2k</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">decompress</span><span class="p">(</span><span class="n">decoding_plugin</span><span class="o">=</span><span class="s2">&quot;pylibjpeg&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">decompress</span><span class="p">(</span><span class="n">decoding_plugin</span><span class="o">=</span><span class="s2">"pylibjpeg"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>If the dataset’s <em>Pixel Data</em> is in the YCbCr color space it will also be converted
@@ -870,28 +870,28 @@ to RGB by default. This can be disabled by passing <code class="docutils literal
 
 <span class="c1"># Original dataset in RGB</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">rgb_color</span>
-<span class="k">assert</span> <span class="n">ds</span><span class="o">.</span><span class="n">PhotometricInterpretation</span> <span class="o">==</span> <span class="s2">&quot;RGB&quot;</span>
+<span class="k">assert</span> <span class="n">ds</span><span class="o">.</span><span class="n">PhotometricInterpretation</span> <span class="o">==</span> <span class="s2">"RGB"</span>
 
 <span class="c1"># Convert to YCbCr and compress</span>
-<span class="n">ybr</span> <span class="o">=</span> <span class="n">convert_color_space</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">pixel_array</span><span class="p">,</span> <span class="s2">&quot;RGB&quot;</span><span class="p">,</span> <span class="s2">&quot;YBR_FULL&quot;</span><span class="p">)</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">PhotometricInterpretation</span> <span class="o">=</span> <span class="s2">&quot;YBR_FULL&quot;</span>
+<span class="n">ybr</span> <span class="o">=</span> <span class="n">convert_color_space</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">pixel_array</span><span class="p">,</span> <span class="s2">"RGB"</span><span class="p">,</span> <span class="s2">"YBR_FULL"</span><span class="p">)</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">PhotometricInterpretation</span> <span class="o">=</span> <span class="s2">"YBR_FULL"</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">compress</span><span class="p">(</span><span class="n">JPEG2000Lossless</span><span class="p">,</span> <span class="n">ybr</span><span class="p">)</span>
-<span class="k">assert</span> <span class="n">ds</span><span class="o">.</span><span class="n">PhotometricInterpretation</span> <span class="o">==</span> <span class="s2">&quot;YBR_FULL&quot;</span>
+<span class="k">assert</span> <span class="n">ds</span><span class="o">.</span><span class="n">PhotometricInterpretation</span> <span class="o">==</span> <span class="s2">"YBR_FULL"</span>
 
 <span class="c1"># RGB reference - needed because converting RGB -&gt; YBR -&gt; RGB is lossy</span>
-<span class="n">rgb</span> <span class="o">=</span> <span class="n">convert_color_space</span><span class="p">(</span><span class="n">ybr</span><span class="p">,</span> <span class="s2">&quot;YBR_FULL&quot;</span><span class="p">,</span> <span class="s2">&quot;RGB&quot;</span><span class="p">)</span>
+<span class="n">rgb</span> <span class="o">=</span> <span class="n">convert_color_space</span><span class="p">(</span><span class="n">ybr</span><span class="p">,</span> <span class="s2">"YBR_FULL"</span><span class="p">,</span> <span class="s2">"RGB"</span><span class="p">)</span>
 
 <span class="c1"># Decompress with conversion to RGB</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">decompress</span><span class="p">()</span>
-<span class="k">assert</span> <span class="n">ds</span><span class="o">.</span><span class="n">PhotometricInterpretation</span> <span class="o">==</span> <span class="s2">&quot;RGB&quot;</span>
+<span class="k">assert</span> <span class="n">ds</span><span class="o">.</span><span class="n">PhotometricInterpretation</span> <span class="o">==</span> <span class="s2">"RGB"</span>
 <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span><span class="n">rgb</span><span class="p">,</span> <span class="n">pixel_array</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 
 <span class="c1"># Decompress without conversion to RGB</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">PhotometricInterpretation</span> <span class="o">=</span> <span class="s2">&quot;YBR_FULL&quot;</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">PhotometricInterpretation</span> <span class="o">=</span> <span class="s2">"YBR_FULL"</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">compress</span><span class="p">(</span><span class="n">JPEG2000Lossless</span><span class="p">,</span> <span class="n">ybr</span><span class="p">)</span>
 
 <span class="n">ds</span><span class="o">.</span><span class="n">decompress</span><span class="p">(</span><span class="n">as_rgb</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="k">assert</span> <span class="n">ds</span><span class="o">.</span><span class="n">PhotometricInterpretation</span> <span class="o">==</span> <span class="s2">&quot;YBR_FULL&quot;</span>
+<span class="k">assert</span> <span class="n">ds</span><span class="o">.</span><span class="n">PhotometricInterpretation</span> <span class="o">==</span> <span class="s2">"YBR_FULL"</span>
 <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span><span class="n">ybr</span><span class="p">,</span> <span class="n">pixel_array</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -980,8 +980,8 @@ comfortable using <em>pydicom</em> to perform pixel data related tasks.</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1015,7 +1015,7 @@ comfortable using <em>pydicom</em> to perform pixel data related tasks.</p>
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
 </p></div>
       
     </div>

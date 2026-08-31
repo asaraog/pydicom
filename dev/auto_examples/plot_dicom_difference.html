@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/css/pydicom.css?v=0f9d927c" />
@@ -41,10 +41,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
 
     <script src="../_static/documentation_options.js?v=d3077db3"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
@@ -55,7 +55,7 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'auto_examples/plot_dicom_difference';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.20.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.21.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = '_static/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -542,7 +542,7 @@ to download the full example code.</p>
 
 + (0002,0000) File Meta Information Group Length  UL: 192
 
-  (0002,0001) File Meta Information Version       OB: b&#39;\x00\x01&#39;
+  (0002,0001) File Meta Information Version       OB: b'\x00\x01'
 
 - (0002,0002) Media Storage SOP Class UID         UI: MR Image Storage
 
@@ -556,25 +556,25 @@ to download the full example code.</p>
 
   (0002,0012) Implementation Class UID            UI: 1.3.6.1.4.1.5962.2
 
-  (0002,0013) Implementation Version Name         SH: &#39;DCTOOL100&#39;
+  (0002,0013) Implementation Version Name         SH: 'DCTOOL100'
 
-  (0002,0016) Source Application Entity Title     AE: &#39;CLUNIE1&#39;
+  (0002,0016) Source Application Entity Title     AE: 'CLUNIE1'
 
   -------------------------------------------------
 
-+ (0008,0005) Specific Character Set              CS: &#39;ISO_IR 100&#39;
++ (0008,0005) Specific Character Set              CS: 'ISO_IR 100'
 
-- (0008,0008) Image Type                          CS: [&#39;DERIVED&#39;, &#39;SECONDARY&#39;, &#39;OTHER&#39;]
+- (0008,0008) Image Type                          CS: ['DERIVED', 'SECONDARY', 'OTHER']
 
-+ (0008,0008) Image Type                          CS: [&#39;ORIGINAL&#39;, &#39;PRIMARY&#39;, &#39;AXIAL&#39;]
++ (0008,0008) Image Type                          CS: ['ORIGINAL', 'PRIMARY', 'AXIAL']
 
-- (0008,0012) Instance Creation Date              DA: &#39;20040826&#39;
+- (0008,0012) Instance Creation Date              DA: '20040826'
 
-+ (0008,0012) Instance Creation Date              DA: &#39;20040119&#39;
++ (0008,0012) Instance Creation Date              DA: '20040119'
 
-- (0008,0013) Instance Creation Time              TM: &#39;185434&#39;
+- (0008,0013) Instance Creation Time              TM: '185434'
 
-+ (0008,0013) Instance Creation Time              TM: &#39;072731&#39;
++ (0008,0013) Instance Creation Time              TM: '072731'
 
   (0008,0014) Instance Creator UID                UI: 1.3.6.1.4.1.5962.3
 
@@ -586,213 +586,213 @@ to download the full example code.</p>
 
 + (0008,0018) SOP Instance UID                    UI: 1.3.6.1.4.1.5962.1.1.1.1.1.20040119072730.12322
 
-- (0008,0020) Study Date                          DA: &#39;20040826&#39;
+- (0008,0020) Study Date                          DA: '20040826'
 
-+ (0008,0020) Study Date                          DA: &#39;20040119&#39;
++ (0008,0020) Study Date                          DA: '20040119'
 
-- (0008,0021) Series Date                         DA: &#39;&#39;
+- (0008,0021) Series Date                         DA: ''
 
-+ (0008,0021) Series Date                         DA: &#39;19970430&#39;
++ (0008,0021) Series Date                         DA: '19970430'
 
-- (0008,0022) Acquisition Date                    DA: &#39;&#39;
+- (0008,0022) Acquisition Date                    DA: ''
 
-+ (0008,0022) Acquisition Date                    DA: &#39;19970430&#39;
++ (0008,0022) Acquisition Date                    DA: '19970430'
 
-+ (0008,0023) Content Date                        DA: &#39;19970430&#39;
++ (0008,0023) Content Date                        DA: '19970430'
 
-- (0008,0030) Study Time                          TM: &#39;185059&#39;
+- (0008,0030) Study Time                          TM: '185059'
 
-+ (0008,0030) Study Time                          TM: &#39;072730&#39;
++ (0008,0030) Study Time                          TM: '072730'
 
-- (0008,0031) Series Time                         TM: &#39;&#39;
+- (0008,0031) Series Time                         TM: ''
 
-+ (0008,0031) Series Time                         TM: &#39;112749&#39;
++ (0008,0031) Series Time                         TM: '112749'
 
-- (0008,0032) Acquisition Time                    TM: &#39;&#39;
+- (0008,0032) Acquisition Time                    TM: ''
 
-+ (0008,0032) Acquisition Time                    TM: &#39;112936&#39;
++ (0008,0032) Acquisition Time                    TM: '112936'
 
-+ (0008,0033) Content Time                        TM: &#39;113008&#39;
++ (0008,0033) Content Time                        TM: '113008'
 
-  (0008,0050) Accession Number                    SH: &#39;&#39;
+  (0008,0050) Accession Number                    SH: ''
 
-- (0008,0060) Modality                            CS: &#39;MR&#39;
+- (0008,0060) Modality                            CS: 'MR'
 
-+ (0008,0060) Modality                            CS: &#39;CT&#39;
++ (0008,0060) Modality                            CS: 'CT'
 
-- (0008,0070) Manufacturer                        LO: &#39;TOSHIBA_MEC&#39;
+- (0008,0070) Manufacturer                        LO: 'TOSHIBA_MEC'
 
-+ (0008,0070) Manufacturer                        LO: &#39;GE MEDICAL SYSTEMS&#39;
++ (0008,0070) Manufacturer                        LO: 'GE MEDICAL SYSTEMS'
 
-- (0008,0080) Institution Name                    LO: &#39;TOSHIBA&#39;
+- (0008,0080) Institution Name                    LO: 'TOSHIBA'
 
-+ (0008,0080) Institution Name                    LO: &#39;JFK IMAGING CENTER&#39;
++ (0008,0080) Institution Name                    LO: 'JFK IMAGING CENTER'
 
-  (0008,0090) Referring Physician&#39;s Name          PN: &#39;&#39;
+  (0008,0090) Referring Physician's Name          PN: ''
 
-- (0008,0201) Timezone Offset From UTC            SH: &#39;-0400&#39;
+- (0008,0201) Timezone Offset From UTC            SH: '-0400'
 
-+ (0008,0201) Timezone Offset From UTC            SH: &#39;-0500&#39;
++ (0008,0201) Timezone Offset From UTC            SH: '-0500'
 
-- (0008,1010) Station Name                        SH: &#39;000000000&#39;
+- (0008,1010) Station Name                        SH: '000000000'
 
-+ (0008,1010) Station Name                        SH: &#39;CT01_OC0&#39;
++ (0008,1010) Station Name                        SH: 'CT01_OC0'
 
-+ (0008,1030) Study Description                   LO: &#39;e+1&#39;
++ (0008,1030) Study Description                   LO: 'e+1'
 
-- (0008,1060) Name of Physician(s) Reading Study  PN: &#39;----&#39;
+- (0008,1060) Name of Physician(s) Reading Study  PN: '----'
 
-- (0008,1070) Operators&#39; Name                     PN: &#39;----&#39;
+- (0008,1070) Operators' Name                     PN: '----'
 
-- (0008,1090) Manufacturer&#39;s Model Name           LO: &#39;MRT50H1&#39;
+- (0008,1090) Manufacturer's Model Name           LO: 'MRT50H1'
 
-+ (0008,1090) Manufacturer&#39;s Model Name           LO: &#39;RHAPSODE&#39;
++ (0008,1090) Manufacturer's Model Name           LO: 'RHAPSODE'
 
-+ (0009,0010) Private Creator                     LO: &#39;GEMS_IDEN_01&#39;
++ (0009,0010) Private Creator                     LO: 'GEMS_IDEN_01'
 
-+ (0009,1001) [Full fidelity]                     LO: &#39;GE_GENESIS_FF&#39;
++ (0009,1001) [Full fidelity]                     LO: 'GE_GENESIS_FF'
 
-+ (0009,1002) [Suite id]                          SH: &#39;CT01&#39;
++ (0009,1002) [Suite id]                          SH: 'CT01'
 
-+ (0009,1004) [Product id]                        SH: &#39;HiSpeed CT/i&#39;
++ (0009,1004) [Product id]                        SH: 'HiSpeed CT/i'
 
 + (0009,1027) [Image actual date]                 SL: 862399669
 
-+ (0009,1030) [Service id]                        SH: &#39;&#39;
++ (0009,1030) [Service id]                        SH: ''
 
-+ (0009,1031) [Mobile location number]            SH: &#39;&#39;
++ (0009,1031) [Mobile location number]            SH: ''
 
-+ (0009,10E6) [Genesis Version - now]             SH: &#39;05&#39;
++ (0009,10E6) [Genesis Version - now]             SH: '05'
 
 + (0009,10E7) [Exam Record checksum]              UL: 973283917
 
 + (0009,10E9) [Actual series data time stamp]     SL: 862399669
 
-- (0010,0010) Patient&#39;s Name                      PN: &#39;CompressedSamples^MR1&#39;
+- (0010,0010) Patient's Name                      PN: 'CompressedSamples^MR1'
 
-+ (0010,0010) Patient&#39;s Name                      PN: &#39;CompressedSamples^CT1&#39;
++ (0010,0010) Patient's Name                      PN: 'CompressedSamples^CT1'
 
-- (0010,0020) Patient ID                          LO: &#39;4MR1&#39;
+- (0010,0020) Patient ID                          LO: '4MR1'
 
-+ (0010,0020) Patient ID                          LO: &#39;1CT1&#39;
++ (0010,0020) Patient ID                          LO: '1CT1'
 
-  (0010,0030) Patient&#39;s Birth Date                DA: &#39;&#39;
+  (0010,0030) Patient's Birth Date                DA: ''
 
-- (0010,0040) Patient&#39;s Sex                       CS: &#39;F&#39;
+- (0010,0040) Patient's Sex                       CS: 'F'
 
-+ (0010,0040) Patient&#39;s Sex                       CS: &#39;O&#39;
++ (0010,0040) Patient's Sex                       CS: 'O'
 
 + (0010,1002)  Other Patient IDs Sequence  2 item(s) ----
 
-+    (0010,0020) Patient ID                          LO: &#39;ABCD1234&#39;
++    (0010,0020) Patient ID                          LO: 'ABCD1234'
 
-+    (0010,0022) Type of Patient ID                  CS: &#39;TEXT&#39;
-
-+    ---------
-
-+    (0010,0020) Patient ID                          LO: &#39;1234ABCD&#39;
-
-+    (0010,0022) Type of Patient ID                  CS: &#39;TEXT&#39;
++    (0010,0022) Type of Patient ID                  CS: 'TEXT'
 
 +    ---------
 
-- (0010,1020) Patient&#39;s Size                      DS: None
++    (0010,0020) Patient ID                          LO: '1234ABCD'
 
-+ (0010,1010) Patient&#39;s Age                       AS: &#39;000Y&#39;
++    (0010,0022) Type of Patient ID                  CS: 'TEXT'
 
-- (0010,1030) Patient&#39;s Weight                    DS: &#39;80.0000&#39;
++    ---------
 
-+ (0010,1030) Patient&#39;s Weight                    DS: &#39;0.000000&#39;
+- (0010,1020) Patient's Size                      DS: None
 
-+ (0010,21B0) Additional Patient History          LT: &#39;&#39;
++ (0010,1010) Patient's Age                       AS: '000Y'
 
-+ (0011,0010) Private Creator                     LO: &#39;GEMS_PATI_01&#39;
+- (0010,1030) Patient's Weight                    DS: '80.0000'
+
++ (0010,1030) Patient's Weight                    DS: '0.000000'
+
++ (0010,21B0) Additional Patient History          LT: ''
+
++ (0011,0010) Private Creator                     LO: 'GEMS_PATI_01'
 
 + (0011,1010) [Patient Status]                    SS: 0
 
-- (0018,0010) Contrast/Bolus Agent                LO: &#39;&#39;
+- (0018,0010) Contrast/Bolus Agent                LO: ''
 
-+ (0018,0010) Contrast/Bolus Agent                LO: &#39;ISOVUE300/100&#39;
++ (0018,0010) Contrast/Bolus Agent                LO: 'ISOVUE300/100'
 
-- (0018,0020) Scanning Sequence                   CS: &#39;SE&#39;
+- (0018,0020) Scanning Sequence                   CS: 'SE'
 
-- (0018,0021) Sequence Variant                    CS: &#39;NONE&#39;
+- (0018,0021) Sequence Variant                    CS: 'NONE'
 
-- (0018,0022) Scan Options                        CS: &#39;&#39;
+- (0018,0022) Scan Options                        CS: ''
 
-+ (0018,0022) Scan Options                        CS: &#39;HELICAL MODE&#39;
++ (0018,0022) Scan Options                        CS: 'HELICAL MODE'
 
-- (0018,0023) MR Acquisition Type                 CS: &#39;3D&#39;
+- (0018,0023) MR Acquisition Type                 CS: '3D'
 
-- (0018,0050) Slice Thickness                     DS: &#39;0.8000&#39;
+- (0018,0050) Slice Thickness                     DS: '0.8000'
 
-+ (0018,0050) Slice Thickness                     DS: &#39;5.000000&#39;
++ (0018,0050) Slice Thickness                     DS: '5.000000'
 
-- (0018,0080) Repetition Time                     DS: &#39;4000.0000&#39;
+- (0018,0080) Repetition Time                     DS: '4000.0000'
 
-- (0018,0081) Echo Time                           DS: &#39;240.0000&#39;
+- (0018,0081) Echo Time                           DS: '240.0000'
 
-+ (0018,0060) KVP                                 DS: &#39;120&#39;
++ (0018,0060) KVP                                 DS: '120'
 
-+ (0018,0088) Spacing Between Slices              DS: &#39;5.000000&#39;
++ (0018,0088) Spacing Between Slices              DS: '5.000000'
 
-+ (0018,0090) Data Collection Diameter            DS: &#39;480.000000&#39;
++ (0018,0090) Data Collection Diameter            DS: '480.000000'
 
-- (0018,0083) Number of Averages                  DS: &#39;1.0000&#39;
+- (0018,0083) Number of Averages                  DS: '1.0000'
 
-- (0018,0084) Imaging Frequency                   DS: &#39;63.92433900&#39;
+- (0018,0084) Imaging Frequency                   DS: '63.92433900'
 
-- (0018,0085) Imaged Nucleus                      SH: &#39;H&#39;
+- (0018,0085) Imaged Nucleus                      SH: 'H'
 
-- (0018,0086) Echo Number(s)                      IS: &#39;1&#39;
+- (0018,0086) Echo Number(s)                      IS: '1'
 
 - (0018,0091) Echo Train Length                   IS: None
 
-- (0018,1000) Device Serial Number                LO: &#39;-0000200&#39;
+- (0018,1000) Device Serial Number                LO: '-0000200'
 
-- (0018,1020) Software Versions                   LO: &#39;V3.51*P25&#39;
+- (0018,1020) Software Versions                   LO: 'V3.51*P25'
 
-+ (0018,1020) Software Versions                   LO: &#39;05&#39;
++ (0018,1020) Software Versions                   LO: '05'
 
-+ (0018,1040) Contrast/Bolus Route                LO: &#39;IV&#39;
++ (0018,1040) Contrast/Bolus Route                LO: 'IV'
 
-+ (0018,1100) Reconstruction Diameter             DS: &#39;338.671600&#39;
++ (0018,1100) Reconstruction Diameter             DS: '338.671600'
 
-+ (0018,1110) Distance Source to Detector         DS: &#39;1099.3100585938&#39;
++ (0018,1110) Distance Source to Detector         DS: '1099.3100585938'
 
-+ (0018,1111) Distance Source to Patient          DS: &#39;630.000000&#39;
++ (0018,1111) Distance Source to Patient          DS: '630.000000'
 
-+ (0018,1120) Gantry/Detector Tilt                DS: &#39;0.000000&#39;
++ (0018,1120) Gantry/Detector Tilt                DS: '0.000000'
 
-+ (0018,1130) Table Height                        DS: &#39;133.699997&#39;
++ (0018,1130) Table Height                        DS: '133.699997'
 
-+ (0018,1150) Exposure Time                       IS: &#39;1601&#39;
++ (0018,1150) Exposure Time                       IS: '1601'
 
-+ (0018,1151) X-Ray Tube Current                  IS: &#39;170&#39;
++ (0018,1151) X-Ray Tube Current                  IS: '170'
 
-- (0018,1314) Flip Angle                          DS: &#39;90&#39;
+- (0018,1314) Flip Angle                          DS: '90'
 
-+ (0018,1152) Exposure                            IS: &#39;170&#39;
++ (0018,1152) Exposure                            IS: '170'
 
-+ (0018,1160) Filter Type                         SH: &#39;LARGE BOWTIE FIL&#39;
++ (0018,1160) Filter Type                         SH: 'LARGE BOWTIE FIL'
 
-+ (0018,1190) Focal Spot(s)                       DS: &#39;0.700000&#39;
++ (0018,1190) Focal Spot(s)                       DS: '0.700000'
 
-+ (0018,1210) Convolution Kernel                  SH: &#39;STANDARD&#39;
++ (0018,1210) Convolution Kernel                  SH: 'STANDARD'
 
-- (0018,5100) Patient Position                    CS: &#39;HFS&#39;
+- (0018,5100) Patient Position                    CS: 'HFS'
 
-+ (0018,5100) Patient Position                    CS: &#39;FFS&#39;
++ (0018,5100) Patient Position                    CS: 'FFS'
 
-+ (0019,0010) Private Creator                     LO: &#39;GEMS_ACQU_01&#39;
++ (0019,0010) Private Creator                     LO: 'GEMS_ACQU_01'
 
 + (0019,1002) [Detector Channel]                  SL: 912
 
-+ (0019,1003) [Cell number at Theta]              DS: &#39;373.750000&#39;
++ (0019,1003) [Cell number at Theta]              DS: '373.750000'
 
-+ (0019,1004) [Cell spacing]                      DS: &#39;1.016600&#39;
++ (0019,1004) [Cell spacing]                      DS: '1.016600'
 
-+ (0019,100F) [Horiz. Frame of ref.]              DS: &#39;955.799988&#39;
++ (0019,100F) [Horiz. Frame of ref.]              DS: '955.799988'
 
 + (0019,1011) [Series contrast]                   SS: 2
 
@@ -806,35 +806,35 @@ to download the full example code.</p>
 
 + (0019,1017) [Series plane]                      SS: 2
 
-+ (0019,1018) [First scan ras]                    LO: &#39;S&#39;
++ (0019,1018) [First scan ras]                    LO: 'S'
 
-+ (0019,1019) [First scan location]               DS: &#39;7.791870&#39;
++ (0019,1019) [First scan location]               DS: '7.791870'
 
-+ (0019,101A) [Last scan ras]                     LO: &#39;I&#39;
++ (0019,101A) [Last scan ras]                     LO: 'I'
 
-+ (0019,101B) [Last scan loc]                     DS: &#39;-320.197968&#39;
++ (0019,101B) [Last scan loc]                     DS: '-320.197968'
 
-+ (0019,101E) [Display field of view]             DS: &#39;0.000000&#39;
++ (0019,101E) [Display field of view]             DS: '0.000000'
 
-+ (0019,1023) [Table Speed [mm/rotation]]         DS: &#39;5.000000&#39;
++ (0019,1023) [Table Speed [mm/rotation]]         DS: '5.000000'
 
-+ (0019,1024) [Mid Scan Time [sec]]               DS: &#39;17.784578&#39;
++ (0019,1024) [Mid Scan Time [sec]]               DS: '17.784578'
 
 + (0019,1025) [Mid scan flag]                     SS: 1
 
 + (0019,1026) [Tube Azimuth [degree]]             SL: 0
 
-+ (0019,1027) [Rotation Speed [msec]]             DS: &#39;1.000000&#39;
++ (0019,1027) [Rotation Speed [msec]]             DS: '1.000000'
 
-+ (0019,102A) [x-ray On position]                 DS: &#39;178.079926&#39;
++ (0019,102A) [x-ray On position]                 DS: '178.079926'
 
-+ (0019,102B) [x-ray Off position]                DS: &#39;3994.299316&#39;
++ (0019,102B) [x-ray Off position]                DS: '3994.299316'
 
 + (0019,102C) [Number of triggers]                SL: 10431
 
-+ (0019,102E) [Angle of first view]               DS: &#39;-718.079956&#39;
++ (0019,102E) [Angle of first view]               DS: '-718.079956'
 
-+ (0019,102F) [Trigger frequency]                 DS: &#39;984.000000&#39;
++ (0019,102F) [Trigger frequency]                 DS: '984.000000'
 
 + (0019,1039) [SFOV Type]                         SS: 16
 
@@ -846,7 +846,7 @@ to download the full example code.</p>
 
 + (0019,1043) [Total Segments Required]           SS: 0
 
-+ (0019,1044) [Interscan delay]                   DS: &#39;1.000000&#39;
++ (0019,1044) [Interscan delay]                   DS: '1.000000'
 
 + (0019,1047) [View compression factor]           SS: 1
 
@@ -878,25 +878,25 @@ to download the full example code.</p>
 
 + (0019,1071) [Set if fatq estimates were used]   SS: 0
 
-+ (0019,1072) [Z chan avg over views]             DS: &#39;0.000000&#39;
++ (0019,1072) [Z chan avg over views]             DS: '0.000000'
 
-+ (0019,1073) [Avg of left ref chans over views]  DS: &#39;0.000000&#39;
++ (0019,1073) [Avg of left ref chans over views]  DS: '0.000000'
 
-+ (0019,1074) [Max left chan over views]          DS: &#39;0.000000&#39;
++ (0019,1074) [Max left chan over views]          DS: '0.000000'
 
-+ (0019,1075) [Avg of right ref chans over views] DS: &#39;0.000000&#39;
++ (0019,1075) [Avg of right ref chans over views] DS: '0.000000'
 
-+ (0019,1076) [Max right chan over views]         DS: &#39;0.000000&#39;
++ (0019,1076) [Max right chan over views]         DS: '0.000000'
 
 + (0019,10DA) [Reference channel used]            SS: 0
 
-+ (0019,10DB) [Back projector coefficient]        DS: &#39;0.000000&#39;
++ (0019,10DB) [Back projector coefficient]        DS: '0.000000'
 
 + (0019,10DC) [Primary speed correction used]     SS: 1
 
 + (0019,10DD) [Overrange correction used]         SS: 1
 
-+ (0019,10DE) [Dynamic Z alpha value]             DS: &#39;0.000000&#39;
++ (0019,10DE) [Dynamic Z alpha value]             DS: '0.000000'
 
 - (0020,000D) Study Instance UID                  UI: 1.3.6.1.4.1.5962.1.2.4.20040826185059.5457
 
@@ -906,17 +906,17 @@ to download the full example code.</p>
 
 + (0020,000E) Series Instance UID                 UI: 1.3.6.1.4.1.5962.1.3.1.1.20040119072730.12322
 
-- (0020,0010) Study ID                            SH: &#39;4MR1&#39;
+- (0020,0010) Study ID                            SH: '4MR1'
 
-+ (0020,0010) Study ID                            SH: &#39;1CT1&#39;
++ (0020,0010) Study ID                            SH: '1CT1'
 
-  (0020,0011) Series Number                       IS: &#39;1&#39;
+  (0020,0011) Series Number                       IS: '1'
 
-- (0020,0012) Acquisition Number                  IS: &#39;0&#39;
+- (0020,0012) Acquisition Number                  IS: '0'
 
-+ (0020,0012) Acquisition Number                  IS: &#39;2&#39;
++ (0020,0012) Acquisition Number                  IS: '2'
 
-  (0020,0013) Instance Number                     IS: &#39;1&#39;
+  (0020,0013) Instance Number                     IS: '1'
 
 - (0020,0032) Image Position (Patient)            DS: [-83.9063, -91.2000, 6.6406]
 
@@ -930,23 +930,23 @@ to download the full example code.</p>
 
 + (0020,0052) Frame of Reference UID              UI: 1.3.6.1.4.1.5962.1.4.1.1.20040119072730.12322
 
-  (0020,0060) Laterality                          CS: &#39;&#39;
+  (0020,0060) Laterality                          CS: ''
 
-- (0020,1040) Position Reference Indicator        LO: &#39;&#39;
+- (0020,1040) Position Reference Indicator        LO: ''
 
-+ (0020,1040) Position Reference Indicator        LO: &#39;SN&#39;
++ (0020,1040) Position Reference Indicator        LO: 'SN'
 
-- (0020,1041) Slice Location                      DS: &#39;0.0000&#39;
+- (0020,1041) Slice Location                      DS: '0.0000'
 
-+ (0020,1041) Slice Location                      DS: &#39;-77.2040634155&#39;
++ (0020,1041) Slice Location                      DS: '-77.2040634155'
 
-  (0020,4000) Image Comments                      LT: &#39;Uncompressed&#39;
+  (0020,4000) Image Comments                      LT: 'Uncompressed'
 
-+ (0021,0010) Private Creator                     LO: &#39;GEMS_RELA_01&#39;
++ (0021,0010) Private Creator                     LO: 'GEMS_RELA_01'
 
 + (0021,1003) [Series from which Prescribed]      SS: 2
 
-+ (0021,1005) [Genesis Version - now]             SH: &#39;05&#39;
++ (0021,1005) [Genesis Version - now]             SH: '05'
 
 + (0021,1007) [Series Record checksum]            UL: 1605775145
 
@@ -954,13 +954,13 @@ to download the full example code.</p>
 
 + (0021,1016) [Unknown]                           SS: 2
 
-+ (0021,1018) [Genesis version - Now]             SH: &#39;05&#39;
++ (0021,1018) [Genesis version - Now]             SH: '05'
 
 + (0021,1019) [Acq recon record checksum]         UL: 750675506
 
 + (0021,1037) [Screen Format]                     SS: 16
 
-+ (0021,104A) [Anatomical reference for scout]    LO: &#39;&#39;
++ (0021,104A) [Anatomical reference for scout]    LO: ''
 
 + (0021,1090) [Tube focal spot position]          SS: 7400
 
@@ -970,7 +970,7 @@ to download the full example code.</p>
 
 + (0021,1093) [Biopsy ref location]               FL: 0.0
 
-+ (0023,0010) Private Creator                     LO: &#39;GEMS_STDY_01&#39;
++ (0023,0010) Private Creator                     LO: 'GEMS_STDY_01'
 
 + (0023,1070) [Start time(secs) in first axial]   FD: 862399761.111079
 
@@ -978,7 +978,7 @@ to download the full example code.</p>
 
 + (0023,107D) [Indicates study has complete info  SS: 0
 
-+ (0025,0010) Private Creator                     LO: &#39;GEMS_SERS_01&#39;
++ (0025,0010) Private Creator                     LO: 'GEMS_SERS_01'
 
 + (0025,1006) [Last pulse sequence used]          SS: 0
 
@@ -994,9 +994,9 @@ to download the full example code.</p>
 
 + (0025,1019) [Last image number used]            SL: 4
 
-+ (0025,101A) [Primary Receiver Suite and Host]   SH: &#39;&#39;
++ (0025,101A) [Primary Receiver Suite and Host]   SH: ''
 
-+ (0027,0010) Private Creator                     LO: &#39;GEMS_IMAG_01&#39;
++ (0027,0010) Private Creator                     LO: 'GEMS_IMAG_01'
 
 + (0027,1006) [Image archive flag]                SL: 1
 
@@ -1012,11 +1012,11 @@ to download the full example code.</p>
 
 + (0027,1020) [Smart scan ON/OFF flag]            SS: 1
 
-+ (0027,1030) [Foreign Image Revision]            SH: &#39;&#39;
++ (0027,1030) [Foreign Image Revision]            SH: ''
 
 + (0027,1035) [Plane Type]                        SS: 2
 
-+ (0027,1040) [RAS letter of image location]      SH: &#39;I&#39;
++ (0027,1040) [RAS letter of image location]      SH: 'I'
 
 + (0027,1041) [Image location]                    FL: -77.20406341552734
 
@@ -1048,17 +1048,17 @@ to download the full example code.</p>
 
 + (0027,1051) [Scan End Location]                 FL: -116.20304870605469
 
-+ (0027,1052) [RAS letter for side of image]      SH: &#39;L&#39;
++ (0027,1052) [RAS letter for side of image]      SH: 'L'
 
-+ (0027,1053) [RAS letter for anterior/posterior] SH: &#39;A&#39;
++ (0027,1053) [RAS letter for anterior/posterior] SH: 'A'
 
-+ (0027,1054) [RAS letter for scout start loc]    SH: &#39;I&#39;
++ (0027,1054) [RAS letter for scout start loc]    SH: 'I'
 
-+ (0027,1055) [RAS letter for scout end loc]      SH: &#39;I&#39;
++ (0027,1055) [RAS letter for scout end loc]      SH: 'I'
 
   (0028,0002) Samples per Pixel                   US: 1
 
-  (0028,0004) Photometric Interpretation          CS: &#39;MONOCHROME2&#39;
+  (0028,0004) Photometric Interpretation          CS: 'MONOCHROME2'
 
 - (0028,0010) Rows                                US: 64
 
@@ -1086,23 +1086,23 @@ to download the full example code.</p>
 
 + (0028,0120) Pixel Padding Value                 SS: -2000
 
-+ (0028,1052) Rescale Intercept                   DS: &#39;-1024&#39;
++ (0028,1052) Rescale Intercept                   DS: '-1024'
 
-+ (0028,1053) Rescale Slope                       DS: &#39;1&#39;
++ (0028,1053) Rescale Slope                       DS: '1'
 
-+ (0029,0010) Private Creator                     LO: &#39;GEMS_IMPS_01&#39;
++ (0029,0010) Private Creator                     LO: 'GEMS_IMPS_01'
 
 + (0029,1004) [Lower range of Pixels1]            SL: 0
 
-+ (0029,1005) [Lower range of Pixels1]            DS: &#39;0.000000&#39;
++ (0029,1005) [Lower range of Pixels1]            DS: '0.000000'
 
-+ (0029,1006) [Lower range of Pixels1]            DS: &#39;0.000000&#39;
++ (0029,1006) [Lower range of Pixels1]            DS: '0.000000'
 
 + (0029,1007) [Lower range of Pixels1]            SL: 87
 
-+ (0029,1008) [Lower range of Pixels1]            SH: &#39;&#39;
++ (0029,1008) [Lower range of Pixels1]            SH: ''
 
-+ (0029,1009) [Lower range of Pixels1]            SH: &#39;&#39;
++ (0029,1009) [Lower range of Pixels1]            SH: ''
 
 + (0029,100A) [Lower range of Pixels1]            SS: 764
 
@@ -1112,13 +1112,13 @@ to download the full example code.</p>
 
 + (0029,1035) [Advantage comp. Underflow]         SL: 0
 
-+ (0043,0010) Private Creator                     LO: &#39;GEMS_PARM_01&#39;
++ (0043,0010) Private Creator                     LO: 'GEMS_PARM_01'
 
-- (0028,1050) Window Center                       DS: &#39;600&#39;
+- (0028,1050) Window Center                       DS: '600'
 
 + (0043,1010) [Window value]                      US: 400
 
-- (0028,1051) Window Width                        DS: &#39;1600&#39;
+- (0028,1051) Window Width                        DS: '1600'
 
 + (0043,1011) [Total input views]                 US: 10431
 
@@ -1132,7 +1132,7 @@ to download the full example code.</p>
 
 + (0043,1016) [Number of overranges]              SS: 0
 
-+ (0043,1017) [IBH image scale factors]           DS: &#39;0.095000&#39;
++ (0043,1017) [IBH image scale factors]           DS: '0.095000'
 
 + (0043,1018) [BBH coefficients]                  DS: [0.085000, 1.102000, 0.095000]
 
@@ -1146,11 +1146,11 @@ to download the full example code.</p>
 
 + (0043,101D) [Level value]                       SS: 40
 
-+ (0043,101E) [Delta Start Time [msec]]           DS: &#39;2.000000&#39;
++ (0043,101E) [Delta Start Time [msec]]           DS: '2.000000'
 
 + (0043,101F) [Max overranges in a view]          SL: 0
 
-+ (0043,1020) [Avg overranges all views]          DS: &#39;0.000000&#39;
++ (0043,1020) [Avg overranges all views]          DS: '0.000000'
 
 + (0043,1021) [Corrected after glow terms]        SS: 0
 
@@ -1158,7 +1158,7 @@ to download the full example code.</p>
 
 + (0043,1026) [No views ref chans blocked]        US: [0, 1, 1, 0, 0, 0]
 
-+ (0043,1027) [Scan Pitch Ratio]                  SH: &#39;/1.0:1&#39;
++ (0043,1027) [Scan Pitch Ratio]                  SH: '/1.0:1'
 
 + (0043,1028) [Unique image iden]                 OB: Array of 80 elements
 
@@ -1223,17 +1223,17 @@ to download the full example code.</p>
 <span class="c1"># newline character massage the string representation of each dicom dataset</span>
 <span class="c1"># into this form:</span>
 <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">rep</span></a> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">line</span></a><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="k">for</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">line</span></a> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)]</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="p">(</span><span class="n">examples</span><span class="o">.</span><span class="n">mr</span><span class="p">,</span> <span class="n">examples</span><span class="o">.</span><span class="n">ct</span><span class="p">)</span>
+    <span class="p">[</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">line</span></a><span class="si">}</span><span class="se">\n</span><span class="s2">"</span> <span class="k">for</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">line</span></a> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)]</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="p">(</span><span class="n">examples</span><span class="o">.</span><span class="n">mr</span><span class="p">,</span> <span class="n">examples</span><span class="o">.</span><span class="n">ct</span><span class="p">)</span>
 <span class="p">]</span>
 
 
 <a href="https://docs.python.org/3/library/difflib.html#difflib.Differ" title="difflib.Differ" class="sphx-glr-backref-module-difflib sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">diff</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/difflib.html#difflib.Differ" title="difflib.Differ" class="sphx-glr-backref-module-difflib sphx-glr-backref-type-py-class"><span class="n">difflib</span><span class="o">.</span><span class="n">Differ</span></a><span class="p">()</span>
 <span class="k">for</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">line</span></a> <span class="ow">in</span> <a href="https://docs.python.org/3/library/difflib.html#difflib.Differ.compare" title="difflib.Differ.compare" class="sphx-glr-backref-module-difflib sphx-glr-backref-type-py-method"><span class="n">diff</span><span class="o">.</span><span class="n">compare</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">rep</span></a><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">rep</span></a><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
-    <span class="k">if</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">line</span></a><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;?&quot;</span><span class="p">:</span>
+    <span class="k">if</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">line</span></a><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">"?"</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">line</span></a><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.083 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.088 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-dicom-difference-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/41ba38a2ae2d88170db68a78dcabe080/plot_dicom_difference.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_dicom_difference.ipynb</span></code></a></p>
@@ -1294,8 +1294,8 @@ to download the full example code.</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1329,7 +1329,7 @@ to download the full example code.</p>
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
 </p></div>
       
     </div>

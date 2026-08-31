@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/pydicom.css?v=0f9d927c" />
@@ -41,10 +41,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
 
     <script src="../../_static/documentation_options.js?v=d3077db3"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
@@ -55,7 +55,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'guides/user/private_data_elements';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.20.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.21.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = '_static/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -556,20 +556,20 @@ functions to make creating private blocks and data elements easier.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span>
 <span class="go">Dataset.file_meta -------------------------------</span>
 <span class="go">(0002,0000) File Meta Information Group Length  UL: 192</span>
-<span class="go">(0002,0001) File Meta Information Version       OB: b&#39;\x00\x01&#39;</span>
+<span class="go">(0002,0001) File Meta Information Version       OB: b'\x00\x01'</span>
 <span class="go">(0002,0002) Media Storage SOP Class UID         UI: CT Image Storage</span>
 <span class="go">(0002,0003) Media Storage SOP Instance UID      UI: 1.3.6.1.4.1.5962.1.1.1.1.1.20040119072730.12322</span>
 <span class="go">(0002,0010) Transfer Syntax UID                 UI: Explicit VR Little Endian</span>
 <span class="go">(0002,0012) Implementation Class UID            UI: 1.3.6.1.4.1.5962.2</span>
-<span class="go">(0002,0013) Implementation Version Name         SH: &#39;DCTOOL100&#39;</span>
-<span class="go">(0002,0016) Source Application Entity Title     AE: &#39;CLUNIE1&#39;</span>
+<span class="go">(0002,0013) Implementation Version Name         SH: 'DCTOOL100'</span>
+<span class="go">(0002,0016) Source Application Entity Title     AE: 'CLUNIE1'</span>
 <span class="go">-------------------------------------------------</span>
-<span class="go">(0008,0005) Specific Character Set              CS: &#39;ISO_IR 100&#39;</span>
-<span class="go">(0008,0008) Image Type                          CS: [&#39;ORIGINAL&#39;, &#39;PRIMARY&#39;, &#39;AXIAL&#39;]</span>
+<span class="go">(0008,0005) Specific Character Set              CS: 'ISO_IR 100'</span>
+<span class="go">(0008,0008) Image Type                          CS: ['ORIGINAL', 'PRIMARY', 'AXIAL']</span>
 <span class="go">...</span>
-<span class="go">(0009,0010) Private Creator                     LO: &#39;GEMS_IDEN_01&#39;</span>
-<span class="go">(0009,1001) [Full fidelity]                     LO: &#39;GE_GENESIS_FF&#39;</span>
-<span class="go">(0009,1002) [Suite id]                          SH: &#39;CT01&#39;</span>
+<span class="go">(0009,0010) Private Creator                     LO: 'GEMS_IDEN_01'</span>
+<span class="go">(0009,1001) [Full fidelity]                     LO: 'GE_GENESIS_FF'</span>
+<span class="go">(0009,1002) [Suite id]                          SH: 'CT01'</span>
 <span class="go">...</span>
 </pre></div>
 </div>
@@ -585,18 +585,18 @@ does not allow you to use a keyword to access them, but they can still be access
 the tag:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">elem</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="mh">0x00091001</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
-<span class="go">&lt;class &#39;pydicom.dataelem.DataElement&#39;&gt;</span>
+<span class="go">&lt;class 'pydicom.dataelem.DataElement'&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">elem</span><span class="o">.</span><span class="n">value</span>
-<span class="go">&#39;GE_GENESIS_FF&#39;</span>
+<span class="go">'GE_GENESIS_FF'</span>
 </pre></div>
 </div>
 <p>You can also create a <a class="reference internal" href="../../reference/generated/pydicom.dataset.PrivateBlock.html#pydicom.dataset.PrivateBlock" title="pydicom.dataset.PrivateBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">PrivateBlock</span></code></a> instance and access private elements
 through it:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">block</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">private_block</span><span class="p">(</span><span class="mh">0x0009</span><span class="p">,</span> <span class="s1">&#39;GEMS_IDEN_01&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">block</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">private_block</span><span class="p">(</span><span class="mh">0x0009</span><span class="p">,</span> <span class="s1">'GEMS_IDEN_01'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">block</span><span class="p">[</span><span class="mh">0x01</span><span class="p">]</span>
-<span class="go">(0009,1001) [Full fidelity]                     LO: &#39;GE_GENESIS_FF&#39;</span>
+<span class="go">(0009,1001) [Full fidelity]                     LO: 'GE_GENESIS_FF'</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">block</span><span class="p">[</span><span class="mh">0x01</span><span class="p">]</span><span class="o">.</span><span class="n">value</span>
-<span class="go">&#39;GE_GENESIS_FF&#39;</span>
+<span class="go">'GE_GENESIS_FF'</span>
 </pre></div>
 </div>
 <p>Using the private block like this is even more useful when creating your own
@@ -608,12 +608,12 @@ private data elements, as shown in the next section.</p>
 reserve a section of private tags. That name should be unique, and usually
 has the company name as the first part to accomplish that.  <em>pydicom</em> provides
 convenience functions to manage this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">block</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">private_block</span><span class="p">(</span><span class="mh">0x000b</span><span class="p">,</span> <span class="s2">&quot;My company 001&quot;</span><span class="p">,</span> <span class="n">create</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">block</span><span class="o">.</span><span class="n">add_new</span><span class="p">(</span><span class="mh">0x01</span><span class="p">,</span> <span class="s2">&quot;SH&quot;</span><span class="p">,</span> <span class="s2">&quot;my value&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">block</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">private_block</span><span class="p">(</span><span class="mh">0x000b</span><span class="p">,</span> <span class="s2">"My company 001"</span><span class="p">,</span> <span class="n">create</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">block</span><span class="o">.</span><span class="n">add_new</span><span class="p">(</span><span class="mh">0x01</span><span class="p">,</span> <span class="s2">"SH"</span><span class="p">,</span> <span class="s2">"my value"</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span>
 <span class="gp">...</span>
-<span class="go">(000b, 0010) Private Creator                     LO: &#39;My company 001&#39;</span>
-<span class="go">(000b, 1001) Private tag data                    SH: &#39;my value&#39;</span>
+<span class="go">(000b, 0010) Private Creator                     LO: 'My company 001'</span>
+<span class="go">(000b, 1001) Private tag data                    SH: 'my value'</span>
 <span class="go">...</span>
 </pre></div>
 </div>
@@ -630,11 +630,11 @@ with a private block object:</p>
 </div>
 <p>Since v3.0, there’s also a convenience method to add a private tag without creating a private
 block first:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">add_new_private</span><span class="p">(</span><span class="s2">&quot;My company 001&quot;</span><span class="p">,</span> <span class="mh">0x000B</span><span class="p">,</span> <span class="mh">0x01</span><span class="p">,</span> <span class="s2">&quot;my value&quot;</span><span class="p">,</span> <span class="s2">&quot;SH&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">add_new_private</span><span class="p">(</span><span class="s2">"My company 001"</span><span class="p">,</span> <span class="mh">0x000B</span><span class="p">,</span> <span class="mh">0x01</span><span class="p">,</span> <span class="s2">"my value"</span><span class="p">,</span> <span class="s2">"SH"</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span>
 <span class="gp">...</span>
-<span class="go">(000b, 0010) Private Creator                     LO: &#39;My company 001&#39;</span>
-<span class="go">(000b, 1001) Private tag data                    SH: &#39;my value&#39;</span>
+<span class="go">(000b, 0010) Private Creator                     LO: 'My company 001'</span>
+<span class="go">(000b, 1001) Private tag data                    SH: 'my value'</span>
 <span class="go">...</span>
 </pre></div>
 </div>
@@ -665,13 +665,13 @@ dictionary before reading or writing a dataset containing them, after that they�
 correctly.</p>
 <p>For standard public elements, you can use <a class="reference internal" href="../../reference/generated/pydicom.datadict.add_dict_entry.html#pydicom.datadict.add_dict_entry" title="pydicom.datadict.add_dict_entry"><code class="xref py py-func docutils literal notranslate"><span class="pre">add_dict_entry()</span></code></a> or
 <a class="reference internal" href="../../reference/generated/pydicom.datadict.add_dict_entries.html#pydicom.datadict.add_dict_entries" title="pydicom.datadict.add_dict_entries"><code class="xref py py-func docutils literal notranslate"><span class="pre">add_dict_entries()</span></code></a> (for multiple elements):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">add_dict_entry</span><span class="p">(</span><span class="n">tag</span><span class="o">=</span><span class="mh">0x888800001</span><span class="p">,</span> <span class="n">VR</span><span class="o">=</span><span class="s2">&quot;SH&quot;</span><span class="p">,</span> <span class="n">keyword</span><span class="o">=</span><span class="s2">&quot;SomeNewTag&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Some New Tag&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">add_dict_entry</span><span class="p">(</span><span class="n">tag</span><span class="o">=</span><span class="mh">0x888800001</span><span class="p">,</span> <span class="n">VR</span><span class="o">=</span><span class="s2">"SH"</span><span class="p">,</span> <span class="n">keyword</span><span class="o">=</span><span class="s2">"SomeNewTag"</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">"Some New Tag"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>For private elements, the analogous functions are
 <a class="reference internal" href="../../reference/generated/pydicom.datadict.add_private_dict_entry.html#pydicom.datadict.add_private_dict_entry" title="pydicom.datadict.add_private_dict_entry"><code class="xref py py-func docutils literal notranslate"><span class="pre">add_private_dict_entry()</span></code></a> and
 <a class="reference internal" href="../../reference/generated/pydicom.datadict.add_private_dict_entries.html#pydicom.datadict.add_private_dict_entries" title="pydicom.datadict.add_private_dict_entries"><code class="xref py py-func docutils literal notranslate"><span class="pre">add_private_dict_entries()</span></code></a>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">add_private_dict_entry</span><span class="p">(</span><span class="n">private_creator</span><span class="o">=</span><span class="s2">&quot;ACME 1.1&quot;</span><span class="p">,</span> <span class="n">tag</span><span class="o">=</span><span class="mh">0x004100001</span><span class="p">,</span> <span class="n">VR</span><span class="o">=</span><span class="s2">&quot;DA&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Release Date&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">add_private_dict_entry</span><span class="p">(</span><span class="n">private_creator</span><span class="o">=</span><span class="s2">"ACME 1.1"</span><span class="p">,</span> <span class="n">tag</span><span class="o">=</span><span class="mh">0x004100001</span><span class="p">,</span> <span class="n">VR</span><span class="o">=</span><span class="s2">"DA"</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">"Release Date"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Note that unlike public elements, private elements don’t have a keyword. As a private element
@@ -749,8 +749,8 @@ be found in <a class="reference internal" href="../../auto_examples/metadata_pro
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -784,7 +784,7 @@ be found in <a class="reference internal" href="../../auto_examples/metadata_pro
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
 </p></div>
       
     </div>

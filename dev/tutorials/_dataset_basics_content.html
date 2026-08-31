@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/css/pydicom.css?v=0f9d927c" />
@@ -41,10 +41,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
 
     <script src="../_static/documentation_options.js?v=d3077db3"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
@@ -55,7 +55,7 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/_dataset_basics_content';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.20.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.21.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = '_static/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -500,9 +500,9 @@
 You can get the local file path to these datasets by using the <a class="reference internal" href="../reference/generated/pydicom.examples.get_path.html#pydicom.examples.get_path" title="pydicom.examples.get_path"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_path()</span></code></a>
 function to return the path as a <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pathlib.Path</span></code></a> (your path may vary):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pydicom</span><span class="w"> </span><span class="kn">import</span> <span class="n">examples</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">path</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">get_path</span><span class="p">(</span><span class="s2">&quot;ct&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">path</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">get_path</span><span class="p">(</span><span class="s2">"ct"</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">path</span>
-<span class="go">PosixPath(&#39;/path/to/pydicom/data/test_files/CT_small.dcm&#39;)</span>
+<span class="go">PosixPath('/path/to/pydicom/data/test_files/CT_small.dcm')</span>
 </pre></div>
 </div>
 <p>When using <em>pydicom</em> to read your own data, use the path to those files directly
@@ -512,12 +512,12 @@ instead.</p>
 we use <a class="reference internal" href="../reference/generated/pydicom.filereader.dcmread.html#pydicom.filereader.dcmread" title="pydicom.filereader.dcmread"><code class="xref py py-func docutils literal notranslate"><span class="pre">dcmread()</span></code></a>, which returns a
 <a class="reference internal" href="../reference/generated/pydicom.dataset.FileDataset.html#pydicom.dataset.FileDataset" title="pydicom.dataset.FileDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">FileDataset</span></code></a> instance:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pydicom</span><span class="w"> </span><span class="kn">import</span> <span class="n">dcmread</span><span class="p">,</span> <span class="n">examples</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">path</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">get_path</span><span class="p">(</span><span class="s2">&quot;ct&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">path</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">get_path</span><span class="p">(</span><span class="s2">"ct"</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">dcmread</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><a class="reference internal" href="../reference/generated/pydicom.filereader.dcmread.html#pydicom.filereader.dcmread" title="pydicom.filereader.dcmread"><code class="xref py py-func docutils literal notranslate"><span class="pre">dcmread()</span></code></a> can also handle file-likes:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="n">ds</span> <span class="o">=</span> <span class="n">dcmread</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -525,25 +525,25 @@ we use <a class="reference internal" href="../reference/generated/pydicom.filere
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">dcmread</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">ds</span><span class="p">:</span>
 <span class="gp">... </span>   <span class="nb">type</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
 <span class="gp">...</span>
-<span class="go">&lt;class &#39;pydicom.dataset.FileDataset&#39;&gt;</span>
+<span class="go">&lt;class 'pydicom.dataset.FileDataset'&gt;</span>
 </pre></div>
 </div>
 <p>By default, <a class="reference internal" href="../reference/generated/pydicom.filereader.dcmread.html#pydicom.filereader.dcmread" title="pydicom.filereader.dcmread"><code class="xref py py-func docutils literal notranslate"><span class="pre">dcmread()</span></code></a> will read any DICOM dataset
 stored in accordance with the <a class="extlink-dcm reference external" href="http://dicom.nema.org/medical/dicom/current/output/chtml/part10/chapter_7.html">DICOM File Format</a>.
 However, you may occasionally read a file that gives you the following
 exception:</p>
-<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">no_meta_path</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">get_path</span><span class="p">(</span><span class="s1">&#39;no_meta&#39;</span><span class="p">)</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">no_meta_path</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">get_path</span><span class="p">(</span><span class="s1">'no_meta'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">dcmread</span><span class="p">(</span><span class="n">no_meta_path</span><span class="p">)</span>
 <span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
-  File <span class="nb">&quot;.../pydicom/filereader.py&quot;</span>, line <span class="m">887</span>, in <span class="n">dcmread</span>
+  File <span class="nb">"&lt;stdin&gt;"</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+  File <span class="nb">".../pydicom/filereader.py"</span>, line <span class="m">887</span>, in <span class="n">dcmread</span>
 <span class="w">    </span><span class="n">force</span><span class="o">=</span><span class="n">force</span><span class="p">,</span> <span class="n">specific_tags</span><span class="o">=</span><span class="n">specific_tags</span><span class="p">)</span>
-  File <span class="nb">&quot;.../pydicom/filereader.py&quot;</span>, line <span class="m">678</span>, in <span class="n">read_partial</span>
+  File <span class="nb">".../pydicom/filereader.py"</span>, line <span class="m">678</span>, in <span class="n">read_partial</span>
 <span class="w">    </span><span class="n">preamble</span> <span class="o">=</span> <span class="n">read_preamble</span><span class="p">(</span><span class="n">fileobj</span><span class="p">,</span> <span class="n">force</span><span class="p">)</span>
-  File <span class="nb">&quot;.../pydicom/filereader.py&quot;</span>, line <span class="m">631</span>, in <span class="n">read_preamble</span>
-<span class="w">    </span><span class="k">raise</span> <span class="n">InvalidDicomError</span><span class="p">(</span><span class="s2">&quot;File is missing DICOM File Meta Information &quot;</span>
+  File <span class="nb">".../pydicom/filereader.py"</span>, line <span class="m">631</span>, in <span class="n">read_preamble</span>
+<span class="w">    </span><span class="k">raise</span> <span class="n">InvalidDicomError</span><span class="p">(</span><span class="s2">"File is missing DICOM File Meta Information "</span>
 <span class="gr">  pydicom.errors.InvalidDicomError</span>: <span class="n">File is missing DICOM File Meta Information</span>
-<span class="x">  header or the &#39;DICM&#39; prefix is missing from the header. Use force=True to</span>
+<span class="x">  header or the 'DICM' prefix is missing from the header. Use force=True to</span>
 <span class="x">  force reading.</span>
 </pre></div>
 </div>
@@ -560,27 +560,27 @@ keyword parameter to force reading:</p>
 <p>A note of caution about using <code class="docutils literal notranslate"><span class="pre">force=True</span></code>; because <em>pydicom</em> uses a
 deferred-read system, <strong>no exceptions</strong> will be raised at the time of reading,
 no matter what the contents of the file are:</p>
-<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;not_dicom.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">not_dicom</span><span class="p">:</span>
-<span class="gp">... </span>   <span class="n">not_dicom</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;This is not a DICOM file!&#39;</span><span class="p">)</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'not_dicom.txt'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">not_dicom</span><span class="p">:</span>
+<span class="gp">... </span>   <span class="n">not_dicom</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'This is not a DICOM file!'</span><span class="p">)</span>
 <span class="gp">...</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">dcmread</span><span class="p">(</span><span class="s1">&#39;not_dicom.txt&#39;</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">dcmread</span><span class="p">(</span><span class="s1">'not_dicom.txt'</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>You’ll only run into problems when trying to use the dataset:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
 <span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
-  File <span class="nb">&quot;../pydicom/dataset.py&quot;</span>, line <span class="m">1703</span>, in <span class="n">__str__</span>
+  File <span class="nb">"&lt;stdin&gt;"</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+  File <span class="nb">"../pydicom/dataset.py"</span>, line <span class="m">1703</span>, in <span class="n">__str__</span>
 <span class="w">    </span>  <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pretty_str</span><span class="p">()</span>
-  File <span class="nb">&quot;../pydicom/dataset.py&quot;</span>, line <span class="m">1436</span>, in <span class="n">_pretty_str</span>
+  File <span class="nb">"../pydicom/dataset.py"</span>, line <span class="m">1436</span>, in <span class="n">_pretty_str</span>
 <span class="w">    </span>  <span class="k">for</span> <span class="n">data_element</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
-  File <span class="nb">&quot;../pydicom/dataset.py&quot;</span>, line <span class="m">1079</span>, in <span class="n">__iter__</span>
+  File <span class="nb">"../pydicom/dataset.py"</span>, line <span class="m">1079</span>, in <span class="n">__iter__</span>
 <span class="w">    </span>  <span class="k">yield</span> <span class="bp">self</span><span class="p">[</span><span class="n">tag</span><span class="p">]</span>
-  File <span class="nb">&quot;../pydicom/dataset.py&quot;</span>, line <span class="m">833</span>, in <span class="n">__getitem__</span>
+  File <span class="nb">"../pydicom/dataset.py"</span>, line <span class="m">833</span>, in <span class="n">__getitem__</span>
 <span class="w">    </span>  <span class="bp">self</span><span class="p">[</span><span class="n">tag</span><span class="p">]</span> <span class="o">=</span> <span class="n">DataElement_from_raw</span><span class="p">(</span><span class="n">data_elem</span><span class="p">,</span> <span class="n">character_set</span><span class="p">)</span>
-  File <span class="nb">&quot;../pydicom/dataelem.py&quot;</span>, line <span class="m">581</span>, in <span class="n">DataElement_from_raw</span>
+  File <span class="nb">"../pydicom/dataelem.py"</span>, line <span class="m">581</span>, in <span class="n">DataElement_from_raw</span>
 <span class="w">    </span>  <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="gr">  KeyError</span>: <span class="n">&quot;Unknown DICOM tag (6854,7369) can&#39;t look up VR&quot;</span>
+<span class="gr">  KeyError</span>: <span class="n">"Unknown DICOM tag (6854,7369) can't look up VR"</span>
 </pre></div>
 </div>
 </section>
@@ -590,39 +590,39 @@ no matter what the contents of the file are:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pydicom</span><span class="w"> </span><span class="kn">import</span> <span class="n">examples</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">ct</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
-<span class="go">&lt;class &#39;pydicom.dataset.FileDataset&#39;&gt;</span>
+<span class="go">&lt;class 'pydicom.dataset.FileDataset'&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">filename</span>
-<span class="go">&#39;/path/to/pydicom/data/test_files/CT_small.dcm&#39;</span>
+<span class="go">'/path/to/pydicom/data/test_files/CT_small.dcm'</span>
 </pre></div>
 </div>
 <p>You can view the contents of the entire dataset by using <a class="reference external" href="https://docs.python.org/3/library/functions.html#print" title="(in Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">print()</span></code></a>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
 <span class="go">Dataset.file_meta -------------------------------</span>
 <span class="go">(0002,0000) File Meta Information Group Length  UL: 192</span>
-<span class="go">(0002,0001) File Meta Information Version       OB: b&#39;\x00\x01&#39;</span>
+<span class="go">(0002,0001) File Meta Information Version       OB: b'\x00\x01'</span>
 <span class="go">(0002,0002) Media Storage SOP Class UID         UI: CT Image Storage</span>
 <span class="go">(0002,0003) Media Storage SOP Instance UID      UI: 1.3.6.1.4.1.5962.1.1.1.1.1.20040119072730.12322</span>
 <span class="go">(0002,0010) Transfer Syntax UID                 UI: Explicit VR Little Endian</span>
 <span class="go">(0002,0012) Implementation Class UID            UI: 1.3.6.1.4.1.5962.2</span>
-<span class="go">(0002,0013) Implementation Version Name         SH: &#39;DCTOOL100&#39;</span>
-<span class="go">(0002,0016) Source Application Entity Title     AE: &#39;CLUNIE1&#39;</span>
+<span class="go">(0002,0013) Implementation Version Name         SH: 'DCTOOL100'</span>
+<span class="go">(0002,0016) Source Application Entity Title     AE: 'CLUNIE1'</span>
 <span class="go">-------------------------------------------------</span>
-<span class="go">(0008,0005) Specific Character Set              CS: &#39;ISO_IR 100&#39;</span>
-<span class="go">(0008,0008) Image Type                          CS: [&#39;ORIGINAL&#39;, &#39;PRIMARY&#39;, &#39;AXIAL&#39;]</span>
-<span class="go">(0008,0012) Instance Creation Date              DA: &#39;20040119&#39;</span>
-<span class="go">(0008,0013) Instance Creation Time              TM: &#39;072731&#39;</span>
+<span class="go">(0008,0005) Specific Character Set              CS: 'ISO_IR 100'</span>
+<span class="go">(0008,0008) Image Type                          CS: ['ORIGINAL', 'PRIMARY', 'AXIAL']</span>
+<span class="go">(0008,0012) Instance Creation Date              DA: '20040119'</span>
+<span class="go">(0008,0013) Instance Creation Time              TM: '072731'</span>
 <span class="go">(0008,0014) Instance Creator UID                UI: 1.3.6.1.4.1.5962.3</span>
 <span class="go">(0008,0016) SOP Class UID                       UI: CT Image Storage</span>
 <span class="go">...</span>
 <span class="go">(0010,1002)  Other Patient IDs Sequence   2 item(s) ----</span>
-<span class="go">    (0010,0020) Patient ID                          LO: &#39;ABCD1234&#39;</span>
-<span class="go">    (0010,0022) Type of Patient ID                  CS: &#39;TEXT&#39;</span>
+<span class="go">    (0010,0020) Patient ID                          LO: 'ABCD1234'</span>
+<span class="go">    (0010,0022) Type of Patient ID                  CS: 'TEXT'</span>
 <span class="go">    ---------</span>
-<span class="go">    (0010,0020) Patient ID                          LO: &#39;1234ABCD&#39;</span>
-<span class="go">    (0010,0022) Type of Patient ID                  CS: &#39;TEXT&#39;</span>
+<span class="go">    (0010,0020) Patient ID                          LO: '1234ABCD'</span>
+<span class="go">    (0010,0022) Type of Patient ID                  CS: 'TEXT'</span>
 <span class="go">    ---------</span>
 <span class="go">...</span>
-<span class="go">(0043,0010) Private Creator                     LO: &#39;GEMS_PARM_01&#39;</span>
+<span class="go">(0043,0010) Private Creator                     LO: 'GEMS_PARM_01'</span>
 <span class="go">(0043,1010) [Window value]                      US: 400</span>
 <span class="go">...</span>
 <span class="go">(7FE0,0010) Pixel Data                          OW: Array of 32768 elements</span>
@@ -675,12 +675,12 @@ instance:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">elem</span><span class="o">.</span><span class="n">tag</span>
 <span class="go">(0008,0016)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">elem</span><span class="o">.</span><span class="n">keyword</span>
-<span class="go">&#39;SOPClassUID&#39;</span>
+<span class="go">'SOPClassUID'</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">private_elem</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="mh">0x0043</span><span class="p">,</span> <span class="mh">0x1010</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">private_elem</span>
 <span class="go">(0043,1010) [Window value]                      US: 400</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">private_elem</span><span class="o">.</span><span class="n">keyword</span>
-<span class="go">&#39;&#39;</span>
+<span class="go">''</span>
 </pre></div>
 </div>
 <p>We can also access standard elements through their <em>keyword</em>. The keyword is
@@ -688,7 +688,7 @@ usually the same as the element’s name without any spaces, but there are
 exceptions - such as (0010,0010) <em>Patient’s Name</em> having a keyword of
 <em>PatientName</em>. A list of keywords for all standard elements can be found
 <a class="extlink-dcm reference external" href="http://dicom.nema.org/medical/dicom/current/output/chtml/part06/chapter_6.html">here</a>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">elem</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;SOPClassUID&#39;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">elem</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">'SOPClassUID'</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">elem</span>
 <span class="go">(0008,0016) SOP Class UID                       UI: CT Image Storage</span>
 </pre></div>
@@ -698,13 +698,13 @@ repeating group elements. So for those elements stick to the
 <code class="docutils literal notranslate"><span class="pre">Dataset[group</span> <span class="pre">number,</span> <span class="pre">element</span> <span class="pre">number]</span></code> method.</p>
 <p>In most cases, the important thing about an element is its value:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">elem</span><span class="o">.</span><span class="n">value</span>
-<span class="go">&#39;1.2.840.10008.5.1.4.1.1.2&#39;</span>
+<span class="go">'1.2.840.10008.5.1.4.1.1.2'</span>
 </pre></div>
 </div>
 <p>For standard elements, you can use the Python dot notation with the keyword to
 get the value:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">SOPClassUID</span>
-<span class="go">&#39;1.2.840.10008.5.1.4.1.1.2&#39;</span>
+<span class="go">'1.2.840.10008.5.1.4.1.1.2'</span>
 </pre></div>
 </div>
 <p>This is the recommended method of accessing the value of standard elements.
@@ -712,15 +712,15 @@ It’s simpler and more human-friendly then dealing with element tags and later
 on you’ll see how you can use the keyword to do far more than just accessing the value.</p>
 <p>Elements may also be multi-valued - that is, have a <a class="extlink-dcm reference external" href="http://dicom.nema.org/medical/dicom/current/output/chtml/part05/sect_6.4.html">Value Multiplicity</a> (VM) &gt; 1:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">ImageType</span>
-<span class="go">[&#39;ORIGINAL&#39;, &#39;PRIMARY&#39;, &#39;AXIAL&#39;]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;ImageType&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">VM</span>
+<span class="go">['ORIGINAL', 'PRIMARY', 'AXIAL']</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="p">[</span><span class="s1">'ImageType'</span><span class="p">]</span><span class="o">.</span><span class="n">VM</span>
 <span class="go">3</span>
 </pre></div>
 </div>
 <p>The items for multi-valued elements can be accessed using the standard Python
 <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a> methods:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">ImageType</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="go">&#39;PRIMARY&#39;</span>
+<span class="go">'PRIMARY'</span>
 </pre></div>
 </div>
 </section>
@@ -730,11 +730,11 @@ on you’ll see how you can use the keyword to do far more than just accessing t
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
 <span class="gp">...</span>
 <span class="go">(0010,1002)  Other Patient IDs Sequence   2 item(s) ----</span>
-<span class="go">    (0010,0020) Patient ID                          LO: &#39;ABCD1234&#39;</span>
-<span class="go">    (0010,0022) Type of Patient ID                  CS: &#39;TEXT&#39;</span>
+<span class="go">    (0010,0020) Patient ID                          LO: 'ABCD1234'</span>
+<span class="go">    (0010,0022) Type of Patient ID                  CS: 'TEXT'</span>
 <span class="go">    ---------</span>
-<span class="go">    (0010,0020) Patient ID                          LO: &#39;1234ABCD&#39;</span>
-<span class="go">    (0010,0022) Type of Patient ID                  CS: &#39;TEXT&#39;</span>
+<span class="go">    (0010,0020) Patient ID                          LO: '1234ABCD'</span>
+<span class="go">    (0010,0022) Type of Patient ID                  CS: 'TEXT'</span>
 <span class="go">    ---------</span>
 <span class="go">...</span>
 </pre></div>
@@ -766,7 +766,7 @@ elements:</p>
 </ul>
 <p>Sequence elements can be accessed in the same manner as non-sequence ones:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">elem</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="mh">0x0010</span><span class="p">,</span> <span class="mh">0x1002</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">elem</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;OtherPatientIDsSequence&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">elem</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">'OtherPatientIDsSequence'</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>The main difference between sequence and non-sequence elements is that their value is
@@ -775,13 +775,13 @@ which can be accessed using the standard Python <a class="reference external" hr
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">OtherPatientIDsSequence</span><span class="p">)</span>
 <span class="go">2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">OtherPatientIDsSequence</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="go">&lt;class &#39;pydicom.dataset.Dataset&#39;&gt;</span>
+<span class="go">&lt;class 'pydicom.dataset.Dataset'&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">OtherPatientIDsSequence</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="go">(0010,0020) Patient ID                          LO: &#39;ABCD1234&#39;</span>
-<span class="go">(0010,0022) Type of Patient ID                  CS: &#39;TEXT&#39;</span>
+<span class="go">(0010,0020) Patient ID                          LO: 'ABCD1234'</span>
+<span class="go">(0010,0022) Type of Patient ID                  CS: 'TEXT'</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">OtherPatientIDsSequence</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="go">(0010,0020) Patient ID                          LO: &#39;1234ABCD&#39;</span>
-<span class="go">(0010,0022) Type of Patient ID                  CS: &#39;TEXT&#39;</span>
+<span class="go">(0010,0020) Patient ID                          LO: '1234ABCD'</span>
+<span class="go">(0010,0022) Type of Patient ID                  CS: 'TEXT'</span>
 </pre></div>
 </div>
 </section>
@@ -794,7 +794,7 @@ The answer is a file header containing:</p>
 <ul>
 <li><p>An 128 byte preamble:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">preamble</span>
-<span class="go">b&#39;II*\x00T\x18\x08\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...</span>
+<span class="go">b'II*\x00T\x18\x08\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...</span>
 </pre></div>
 </div>
 </li>
@@ -804,13 +804,13 @@ stored in a <a class="reference internal" href="../reference/generated/pydicom.d
 <a class="reference internal" href="../reference/generated/pydicom.dataset.FileDataset.html#pydicom.dataset.FileDataset.file_meta" title="pydicom.dataset.FileDataset.file_meta"><code class="xref py py-attr docutils literal notranslate"><span class="pre">file_meta</span></code></a> attribute:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">file_meta</span>
 <span class="go">(0002,0000) File Meta Information Group Length  UL: 192</span>
-<span class="go">(0002,0001) File Meta Information Version       OB: b&#39;\x00\x01&#39;</span>
+<span class="go">(0002,0001) File Meta Information Version       OB: b'\x00\x01'</span>
 <span class="go">(0002,0002) Media Storage SOP Class UID         UI: CT Image Storage</span>
 <span class="go">(0002,0003) Media Storage SOP Instance UID      UI: 1.3.6.1.4.1.5962.1.1.1.1.1.20040119072730.12322</span>
 <span class="go">(0002,0010) Transfer Syntax UID                 UI: Explicit VR Little Endian</span>
 <span class="go">(0002,0012) Implementation Class UID            UI: 1.3.6.1.4.1.5962.2</span>
-<span class="go">(0002,0013) Implementation Version Name         SH: &#39;DCTOOL100&#39;</span>
-<span class="go">(0002,0016) Source Application Entity Title     AE: &#39;CLUNIE1&#39;</span>
+<span class="go">(0002,0013) Implementation Version Name         SH: 'DCTOOL100'</span>
+<span class="go">(0002,0016) Source Application Entity Title     AE: 'CLUNIE1'</span>
 </pre></div>
 </div>
 </li>
@@ -823,11 +823,11 @@ stored in a <a class="reference internal" href="../reference/generated/pydicom.d
 entire dataset (including the pixel data) has been encoded. Chances are
 that at some point you’ll need to know it:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">file_meta</span><span class="o">.</span><span class="n">TransferSyntaxUID</span>
-<span class="go">&#39;1.2.840.10008.1.2.1&#39;</span>
+<span class="go">'1.2.840.10008.1.2.1'</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">file_meta</span><span class="o">.</span><span class="n">TransferSyntaxUID</span><span class="o">.</span><span class="n">name</span>
-<span class="go">&#39;Explicit VR Little Endian&#39;</span>
+<span class="go">'Explicit VR Little Endian'</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">file_meta</span><span class="o">.</span><span class="n">TransferSyntaxUID</span><span class="o">.</span><span class="n">keyword</span>
-<span class="go">&#39;ExplicitVRLittleEndian&#39;</span>
+<span class="go">'ExplicitVRLittleEndian'</span>
 </pre></div>
 </div>
 </section>
@@ -839,10 +839,10 @@ that at some point you’ll need to know it:</p>
 <p>We can modify the value of any element by retrieving it and setting the value:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">elem</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="mh">0x0010</span><span class="p">,</span> <span class="mh">0x0010</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">elem</span><span class="o">.</span><span class="n">value</span>
-<span class="go">&#39;CompressedSamples^CT1&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">elem</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;Citizen^Jan&#39;</span>
+<span class="go">'CompressedSamples^CT1'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">elem</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s1">'Citizen^Jan'</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">elem</span>
-<span class="go">(0010,0010) Patient&#39;s Name                      PN: &#39;Citizen^Jan&#39;</span>
+<span class="go">(0010,0010) Patient's Name                      PN: 'Citizen^Jan'</span>
 </pre></div>
 </div>
 <p>Which raises the question; what <em>kind</em> of value should be used to set an element’s value?
@@ -862,27 +862,27 @@ allowed types are <code class="docutils literal notranslate"><span class="pre">N
 so using the <em>Element VR and Python types</em> guide, we see the only type that may be
 used is <code class="docutils literal notranslate"><span class="pre">list[int]</span></code>.</p>
 <p>For standard elements it’s simpler to use the keyword to set the value:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">PatientName</span> <span class="o">=</span> <span class="s1">&#39;Citizen^Snips&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">PatientName</span> <span class="o">=</span> <span class="s1">'Citizen^Snips'</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">elem</span>
-<span class="go">(0010,0010) Patient&#39;s Name                      PN: &#39;Citizen^Snips&#39;</span>
+<span class="go">(0010,0010) Patient's Name                      PN: 'Citizen^Snips'</span>
 </pre></div>
 </div>
 <p>Multi-valued elements can be set using a <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a> or modified using the
 <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a> methods:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">ImageType</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ORIGINAL&#39;</span><span class="p">,</span> <span class="s1">&#39;PRIMARY&#39;</span><span class="p">,</span> <span class="s1">&#39;LOCALIZER&#39;</span><span class="p">]</span>  <span class="c1"># VR &#39;CS&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">ImageType</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'ORIGINAL'</span><span class="p">,</span> <span class="s1">'PRIMARY'</span><span class="p">,</span> <span class="s1">'LOCALIZER'</span><span class="p">]</span>  <span class="c1"># VR 'CS'</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">ImageType</span>
-<span class="go">[&#39;ORIGINAL&#39;, &#39;PRIMARY&#39;, &#39;LOCALIZER&#39;]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">ImageType</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;DERIVED&#39;</span>
+<span class="go">['ORIGINAL', 'PRIMARY', 'LOCALIZER']</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">ImageType</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'DERIVED'</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">ImageType</span>
-<span class="go">[&#39;ORIGINAL&#39;, &#39;DERIVED&#39;, &#39;LOCALIZER&#39;]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">ImageType</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;PRIMARY&#39;</span><span class="p">)</span>
+<span class="go">['ORIGINAL', 'DERIVED', 'LOCALIZER']</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">ImageType</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'PRIMARY'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">ImageType</span>
-<span class="go">[&#39;ORIGINAL&#39;, &#39;PRIMARY&#39;, &#39;DERIVED&#39;, &#39;LOCALIZER&#39;]</span>
+<span class="go">['ORIGINAL', 'PRIMARY', 'DERIVED', 'LOCALIZER']</span>
 </pre></div>
 </div>
 <p>Similarly, for sequence elements:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pydicom.dataset</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dataset</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">OtherPatientIDsSequence</span> <span class="o">=</span> <span class="p">[</span><span class="n">Dataset</span><span class="p">(),</span> <span class="n">Dataset</span><span class="p">()]</span>  <span class="c1"># VR &#39;SQ&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">OtherPatientIDsSequence</span> <span class="o">=</span> <span class="p">[</span><span class="n">Dataset</span><span class="p">(),</span> <span class="n">Dataset</span><span class="p">()]</span>  <span class="c1"># VR 'SQ'</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">OtherPatientIDsSequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Dataset</span><span class="p">())</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">OtherPatientIDsSequence</span><span class="p">)</span>
 <span class="go">3</span>
@@ -890,13 +890,13 @@ used is <code class="docutils literal notranslate"><span class="pre">list[int]</
 </div>
 <p>The items in a sequence are always <a class="reference internal" href="../reference/generated/pydicom.dataset.Dataset.html#pydicom.dataset.Dataset" title="pydicom.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> instances, if you
 try to add any other type to a sequence you’ll get an exception:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">OtherPatientIDsSequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Hello world?&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">OtherPatientIDsSequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'Hello world?'</span><span class="p">)</span>
 <span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
-  File <span class="nb">&quot;.../pydicom/multival.py&quot;</span>, line <span class="m">63</span>, in <span class="n">append</span>
+  File <span class="nb">"&lt;stdin&gt;"</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+  File <span class="nb">".../pydicom/multival.py"</span>, line <span class="m">63</span>, in <span class="n">append</span>
 <span class="w">    </span><span class="bp">self</span><span class="o">.</span><span class="n">_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">type_constructor</span><span class="p">(</span><span class="n">val</span><span class="p">))</span>
-  File <span class="nb">&quot;.../pydicom/sequence.py&quot;</span>, line <span class="m">15</span>, in <span class="n">validate_dataset</span>
-<span class="w">    </span><span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;Sequence contents must be Dataset instances.&#39;</span><span class="p">)</span>
+  File <span class="nb">".../pydicom/sequence.py"</span>, line <span class="m">15</span>, in <span class="n">validate_dataset</span>
+<span class="w">    </span><span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">'Sequence contents must be Dataset instances.'</span><span class="p">)</span>
 <span class="gr">  TypeError</span>: <span class="n">Sequence contents must be Dataset instances.</span>
 </pre></div>
 </div>
@@ -904,7 +904,7 @@ try to add any other type to a sequence you’ll get an exception:</p>
 will automatically be converted to an empty list when you do so):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">PatientName</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">elem</span>
-<span class="go">(0010,0010) Patient&#39;s Name                      PN: None</span>
+<span class="go">(0010,0010) Patient's Name                      PN: None</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">OtherPatientIDsSequence</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">OtherPatientIDsSequence</span><span class="p">)</span>
 <span class="go">0</span>
@@ -932,16 +932,16 @@ function to look it up</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pydicom.datadict</span><span class="w"> </span><span class="kn">import</span> <span class="n">dictionary_VR</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dictionary_VR</span><span class="p">([</span><span class="mh">0x0028</span><span class="p">,</span> <span class="mh">0x1050</span><span class="p">])</span>
-<span class="go">&#39;DS&#39;</span>
+<span class="go">'DS'</span>
 </pre></div>
 </div>
 <p>As we saw earlier, you can use the <a class="reference internal" href="../guides/element_value_types.html"><span class="doc">Element VR and Python types</span></a> guide to find the Python type to use for a given VR.
 For <strong>DS</strong> with a VM of 1-n, we can use a <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>,
 or a <code class="docutils literal notranslate"><span class="pre">list</span></code> of those types. So to add the new element:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">add_new</span><span class="p">([</span><span class="mh">0x0028</span><span class="p">,</span> <span class="mh">0x1050</span><span class="p">],</span> <span class="s1">&#39;DS&#39;</span><span class="p">,</span> <span class="s2">&quot;100.0&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">add_new</span><span class="p">([</span><span class="mh">0x0028</span><span class="p">,</span> <span class="mh">0x1050</span><span class="p">],</span> <span class="s1">'DS'</span><span class="p">,</span> <span class="s2">"100.0"</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">elem</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="mh">0x0028</span><span class="p">,</span> <span class="mh">0x1050</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">elem</span>
-<span class="go">(0028,1050) Window Center                       DS: &quot;100.0&quot;</span>
+<span class="go">(0028,1050) Window Center                       DS: "100.0"</span>
 </pre></div>
 </div>
 <p>Some VRs, like <strong>DS</strong>, require the value be formatted correctly. For example, elements with
@@ -954,11 +954,11 @@ used for query matching). The full list of VRs and their formatting requirements
 <p>Adding elements with <a class="reference internal" href="../reference/generated/pydicom.dataset.Dataset.html#pydicom.dataset.Dataset.add_new" title="pydicom.dataset.Dataset.add_new"><code class="xref py py-meth docutils literal notranslate"><span class="pre">add_new()</span></code></a> is a lot of
 work, so for standard elements you can just use the keyword
 and <em>pydicom</em> will do the VR lookup for you:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;WindowWidth&#39;</span> <span class="ow">in</span> <span class="n">ds</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">'WindowWidth'</span> <span class="ow">in</span> <span class="n">ds</span>
 <span class="go">False</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">WindowWidth</span> <span class="o">=</span> <span class="mi">500</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;WindowWidth&#39;</span><span class="p">]</span>
-<span class="go">(0028,1051) Window Width                        DS: &quot;500.0&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="p">[</span><span class="s1">'WindowWidth'</span><span class="p">]</span>
+<span class="go">(0028,1051) Window Width                        DS: "500.0"</span>
 </pre></div>
 </div>
 <p>Notice how we can also use the element keyword with the Python
@@ -976,16 +976,16 @@ elements are also covered:</p>
 you can use the same methods on them as well.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">seq</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">OtherPatientIDsSequence</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">seq</span> <span class="o">+=</span> <span class="p">[</span><span class="n">Dataset</span><span class="p">(),</span> <span class="n">Dataset</span><span class="p">(),</span> <span class="n">Dataset</span><span class="p">()]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">seq</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">PatientID</span> <span class="o">=</span> <span class="s1">&#39;Citizen^Jan&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">seq</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">TypeOfPatientID</span> <span class="o">=</span> <span class="s1">&#39;TEXT&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">seq</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">PatientID</span> <span class="o">=</span> <span class="s1">&#39;CompressedSamples^CT1&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">seq</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">TypeOfPatientID</span> <span class="o">=</span> <span class="s1">&#39;TEXT&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">seq</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">PatientID</span> <span class="o">=</span> <span class="s1">'Citizen^Jan'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">seq</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">TypeOfPatientID</span> <span class="o">=</span> <span class="s1">'TEXT'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">seq</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">PatientID</span> <span class="o">=</span> <span class="s1">'CompressedSamples^CT1'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">seq</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">TypeOfPatientID</span> <span class="o">=</span> <span class="s1">'TEXT'</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">seq</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="go">(0010,0020) Patient ID                          LO: &#39;Citizen^Jan&#39;</span>
-<span class="go">(0010,0022) Type of Patient ID                  CS: &#39;TEXT&#39;</span>
+<span class="go">(0010,0020) Patient ID                          LO: 'Citizen^Jan'</span>
+<span class="go">(0010,0022) Type of Patient ID                  CS: 'TEXT'</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">seq</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="go">(0010,0020) Patient ID                          LO: &#39;CompressedSamples^CT1&#39;</span>
-<span class="go">(0010,0022) Type of Patient ID                  CS: &#39;TEXT&#39;</span>
+<span class="go">(0010,0020) Patient ID                          LO: 'CompressedSamples^CT1'</span>
+<span class="go">(0010,0022) Type of Patient ID                  CS: 'TEXT'</span>
 </pre></div>
 </div>
 </section>
@@ -995,11 +995,11 @@ you can use the same methods on them as well.</p>
 a (gggg,0010-00FF) <em>Private Creator</em> element also be added to identify and reserve the
 <code class="docutils literal notranslate"><span class="pre">gggg</span></code> section of private tags. <em>pydicom</em> provides the
 <a class="reference internal" href="../reference/generated/pydicom.dataset.Dataset.html#pydicom.dataset.Dataset.add_new_private" title="pydicom.dataset.Dataset.add_new_private"><code class="xref py py-meth docutils literal notranslate"><span class="pre">add_new_private()</span></code></a> convenience method to help manage this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">add_new_private</span><span class="p">(</span><span class="s2">&quot;Private Creator Name&quot;</span><span class="p">,</span> <span class="mh">0x000B</span><span class="p">,</span> <span class="mh">0x01</span><span class="p">,</span> <span class="s2">&quot;my value&quot;</span><span class="p">,</span> <span class="s2">&quot;SH&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">add_new_private</span><span class="p">(</span><span class="s2">"Private Creator Name"</span><span class="p">,</span> <span class="mh">0x000B</span><span class="p">,</span> <span class="mh">0x01</span><span class="p">,</span> <span class="s2">"my value"</span><span class="p">,</span> <span class="s2">"SH"</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span>
 <span class="gp">...</span>
-<span class="go">(000B,0010) Private Creator                     LO: &#39;Private Creator Name&#39;</span>
-<span class="go">(000B,1001) Private tag data                    SH: &#39;my value&#39;</span>
+<span class="go">(000B,0010) Private Creator                     LO: 'Private Creator Name'</span>
+<span class="go">(000B,1001) Private tag data                    SH: 'my value'</span>
 <span class="go">...</span>
 </pre></div>
 </div>
@@ -1016,7 +1016,7 @@ operator in combination with the element tag:</p>
 </div>
 <p>For standard elements you can use the keyword instead:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">ds</span><span class="o">.</span><span class="n">WindowCenter</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;WindowCenter&#39;</span> <span class="ow">in</span> <span class="n">ds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">'WindowCenter'</span> <span class="ow">in</span> <span class="n">ds</span>
 <span class="go">False</span>
 </pre></div>
 </div>
@@ -1026,10 +1026,10 @@ preferred <a class="reference external" href="https://docs.python.org/3/library/
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span>
 <span class="go">2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">ImageType</span>
-<span class="go">[&#39;ORIGINAL&#39;, &#39;PRIMARY&#39;, &#39;DERIVED&#39;, &#39;LOCALIZER&#39;]</span>
+<span class="go">['ORIGINAL', 'PRIMARY', 'DERIVED', 'LOCALIZER']</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">ds</span><span class="o">.</span><span class="n">ImageType</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">ImageType</span>
-<span class="go">[&#39;ORIGINAL&#39;, &#39;PRIMARY&#39;, &#39;LOCALIZER&#39;]</span>
+<span class="go">['ORIGINAL', 'PRIMARY', 'LOCALIZER']</span>
 </pre></div>
 </div>
 </section>
@@ -1039,11 +1039,11 @@ preferred <a class="reference external" href="https://docs.python.org/3/library/
 <p>After changing the dataset, the final step is to write the modifications back
 to file. This can be done by using <a class="reference internal" href="../reference/generated/pydicom.dataset.Dataset.html#pydicom.dataset.Dataset.save_as" title="pydicom.dataset.Dataset.save_as"><code class="xref py py-meth docutils literal notranslate"><span class="pre">save_as()</span></code></a> to
 write the dataset to the supplied path:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">save_as</span><span class="p">(</span><span class="s1">&#39;out.dcm&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">save_as</span><span class="p">(</span><span class="s1">'out.dcm'</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>You can also write to any Python file-like:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;out.dcm&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'out.dcm'</span><span class="p">,</span> <span class="s1">'wb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
 <span class="gp">... </span>   <span class="n">ds</span><span class="o">.</span><span class="n">save_as</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 <span class="gp">...</span>
 </pre></div>
@@ -1059,21 +1059,21 @@ as-is. This means that even if your dataset is not conformant to the
 still be written exactly as given. To be certain you’re writing the
 dataset in the DICOM File Format you can use the <cite>enforce_file_format</cite> keyword
 parameter:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">save_as</span><span class="p">(</span><span class="s1">&#39;out.dcm&#39;</span><span class="p">,</span> <span class="n">enforce_file_format</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">save_as</span><span class="p">(</span><span class="s1">'out.dcm'</span><span class="p">,</span> <span class="n">enforce_file_format</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>This will attempt to automatically add in any missing required group
 <code class="docutils literal notranslate"><span class="pre">0x0002</span></code> File Meta Information elements and set a blank 128 byte preamble (if
 required). If it’s unable to do so then an exception will be raised:</p>
 <div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">ds</span><span class="o">.</span><span class="n">file_meta</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">save_as</span><span class="p">(</span><span class="s1">&#39;out.dcm&#39;</span><span class="p">,</span> <span class="n">enforce_file_format</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">save_as</span><span class="p">(</span><span class="s1">'out.dcm'</span><span class="p">,</span> <span class="n">enforce_file_format</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
-  File <span class="nb">&quot;.../pydicom/dataset.py&quot;</span>, line <span class="m">2452</span>, in <span class="n">save_as</span>
+  File <span class="nb">"&lt;stdin&gt;"</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+  File <span class="nb">".../pydicom/dataset.py"</span>, line <span class="m">2452</span>, in <span class="n">save_as</span>
 <span class="w">    </span><span class="n">pydicom</span><span class="o">.</span><span class="n">dcmwrite</span><span class="p">(</span>
-  File <span class="nb">&quot;.../pydicom/filewriter.py&quot;</span>, line <span class="m">1311</span>, in <span class="n">dcmwrite</span>
+  File <span class="nb">".../pydicom/filewriter.py"</span>, line <span class="m">1311</span>, in <span class="n">dcmwrite</span>
 <span class="w">    </span><span class="n">validate_file_meta</span><span class="p">(</span><span class="n">file_meta</span><span class="p">,</span> <span class="n">enforce_standard</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-  File <span class="nb">&quot;.../pydicom/dataset.py&quot;</span>, line <span class="m">3204</span>, in <span class="n">validate_file_meta</span>
+  File <span class="nb">".../pydicom/dataset.py"</span>, line <span class="m">3204</span>, in <span class="n">validate_file_meta</span>
 <span class="w">    </span><span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span>
 <span class="gr">AttributeError</span>: <span class="n">Required File Meta Information elements are either missing</span>
 <span class="x">or have an empty value: (0002,0010) Transfer Syntax UID</span>
@@ -1089,8 +1089,8 @@ we need to add it back:</p>
 </pre></div>
 </div>
 <p>And now we can add our <em>Transfer Syntax UID</em> element and save to file:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">file_meta</span><span class="o">.</span><span class="n">TransferSyntaxUID</span> <span class="o">=</span> <span class="s1">&#39;1.2.840.10008.1.2.1&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">save_as</span><span class="p">(</span><span class="s1">&#39;out.dcm&#39;</span><span class="p">,</span> <span class="n">enforce_file_format</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">file_meta</span><span class="o">.</span><span class="n">TransferSyntaxUID</span> <span class="o">=</span> <span class="s1">'1.2.840.10008.1.2.1'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">save_as</span><span class="p">(</span><span class="s1">'out.dcm'</span><span class="p">,</span> <span class="n">enforce_file_format</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -1161,8 +1161,8 @@ we need to add it back:</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1196,7 +1196,7 @@ we need to add it back:</p>
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
 </p></div>
       
     </div>

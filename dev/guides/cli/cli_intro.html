@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/pydicom.css?v=0f9d927c" />
@@ -41,10 +41,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
 
     <script src="../../_static/documentation_options.js?v=d3077db3"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
@@ -55,7 +55,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'guides/cli/cli_intro';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.20.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.21.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = '_static/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -500,17 +500,17 @@ Python code. Additional subcommands may be added over time.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pydicom<span class="w"> </span>show<span class="w"> </span>pydicom::rtplan.dcm
 <span class="go">Dataset.file_meta -------------------------------</span>
 <span class="gp gp-VirtualEnv">(0002, 0000)</span> <span class="go">File Meta Information Group Length  UL: 156</span>
-<span class="gp gp-VirtualEnv">(0002, 0001)</span> <span class="go">File Meta Information Version       OB: b&#39;\x00\x01&#39;</span>
+<span class="gp gp-VirtualEnv">(0002, 0001)</span> <span class="go">File Meta Information Version       OB: b'\x00\x01'</span>
 <span class="gp gp-VirtualEnv">(0002, 0002)</span> <span class="go">Media Storage SOP Class UID         UI: RT Plan Storage</span>
 <span class="gp gp-VirtualEnv">(0002, 0003)</span> <span class="go">Media Storage SOP Instance UID      UI: 1.2.999.999.99.9.9999.9999.20030903150023</span>
 <span class="gp gp-VirtualEnv">(0002, 0010)</span> <span class="go">Transfer Syntax UID                 UI: Implicit VR Little Endian</span>
 <span class="gp gp-VirtualEnv">(0002, 0012)</span> <span class="go">Implementation Class UID            UI: 1.2.888.888.88.8.8.8</span>
 <span class="go">-------------------------------------------------</span>
-<span class="gp gp-VirtualEnv">(0008, 0012)</span> <span class="go">Instance Creation Date              DA: &#39;20030903&#39;</span>
-<span class="gp gp-VirtualEnv">(0008, 0013)</span> <span class="go">Instance Creation Time              TM: &#39;150031&#39;</span>
+<span class="gp gp-VirtualEnv">(0008, 0012)</span> <span class="go">Instance Creation Date              DA: '20030903'</span>
+<span class="gp gp-VirtualEnv">(0008, 0013)</span> <span class="go">Instance Creation Time              TM: '150031'</span>
 <span class="gp gp-VirtualEnv">(0008, 0016)</span> <span class="go">SOP Class UID                       UI: RT Plan Storage</span>
 <span class="gp gp-VirtualEnv">(0008, 0018)</span> <span class="go">SOP Instance UID                    UI: 1.2.777.777.77.7.7777.7777.20030903150023</span>
-<span class="gp gp-VirtualEnv">(0008, 0020)</span> <span class="go">Study Date                          DA: &#39;20030716&#39;</span>
+<span class="gp gp-VirtualEnv">(0008, 0020)</span> <span class="go">Study Date                          DA: '20030716'</span>
 <span class="go">...</span>
 </pre></div>
 </div>
@@ -522,15 +522,15 @@ off when working with your files.</p>
 <p>You can also show just parts of the DICOM file by specifying a data element
 using the usual <em>pydicom</em> keyword notation:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pydicom<span class="w"> </span>show<span class="w"> </span>pydicom::rtplan.dcm::FractionGroupSequence<span class="o">[</span><span class="m">0</span><span class="o">]</span>
-<span class="gp gp-VirtualEnv">(300a, 0071)</span> <span class="go">Fraction Group Number               IS: &quot;1&quot;</span>
-<span class="gp gp-VirtualEnv">(300a, 0078)</span> <span class="go">Number of Fractions Planned         IS: &quot;30&quot;</span>
-<span class="gp gp-VirtualEnv">(300a, 0080)</span> <span class="go">Number of Beams                     IS: &quot;1&quot;</span>
-<span class="gp gp-VirtualEnv">(300a, 00a0)</span> <span class="go">Number of Brachy Application Setups IS: &quot;0&quot;</span>
+<span class="gp gp-VirtualEnv">(300a, 0071)</span> <span class="go">Fraction Group Number               IS: "1"</span>
+<span class="gp gp-VirtualEnv">(300a, 0078)</span> <span class="go">Number of Fractions Planned         IS: "30"</span>
+<span class="gp gp-VirtualEnv">(300a, 0080)</span> <span class="go">Number of Beams                     IS: "1"</span>
+<span class="gp gp-VirtualEnv">(300a, 00a0)</span> <span class="go">Number of Brachy Application Setups IS: "0"</span>
 <span class="gp gp-VirtualEnv">(300c, 0004)</span>  <span class="go">Referenced Beam Sequence  1 item(s) ----</span>
 <span class="gp gp-VirtualEnv">(300a, 0082)</span> <span class="go">Beam Dose Specification Point       DS: [239.531250000000, 239.531250000000, -751.87000000000]</span>
-<span class="gp gp-VirtualEnv">(300a, 0084)</span> <span class="go">Beam Dose                           DS: &quot;1.0275401&quot;</span>
-<span class="gp gp-VirtualEnv">(300a, 0086)</span> <span class="go">Beam Meterset                       DS: &quot;116.0036697&quot;</span>
-<span class="gp gp-VirtualEnv">(300c, 0006)</span> <span class="go">Referenced Beam Number              IS: &quot;1&quot;</span>
+<span class="gp gp-VirtualEnv">(300a, 0084)</span> <span class="go">Beam Dose                           DS: "1.0275401"</span>
+<span class="gp gp-VirtualEnv">(300a, 0086)</span> <span class="go">Beam Meterset                       DS: "116.0036697"</span>
+<span class="gp gp-VirtualEnv">(300c, 0006)</span> <span class="go">Referenced Beam Number              IS: "1"</span>
 <span class="go">---------</span>
 </pre></div>
 </div>
@@ -559,7 +559,7 @@ by typing <code class="docutils literal notranslate"><span class="pre">pydicom</
 <span class="go">optional arguments:</span>
 <span class="go">-h, --help            show this help message and exit</span>
 <span class="go">-x, --exclude-private</span>
-<span class="go">                        Don&#39;t show private data elements</span>
+<span class="go">                        Don't show private data elements</span>
 <span class="go">-t, --top             Only show top level</span>
 <span class="go">-q, --quiet           Only show basic information</span>
 </pre></div>
@@ -583,40 +583,40 @@ combined with other command-line filters for additional functionality. The
 following is an example of piping the output of the pydicom
 ‘show’ subcommand into ‘grep’, filtering for lines with
 either “Dose” or “Sequence” in them:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pydicom<span class="w"> </span>show<span class="w"> </span>pydicom::rtplan.dcm<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;Dose\|Sequence&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pydicom<span class="w"> </span>show<span class="w"> </span>pydicom::rtplan.dcm<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">"Dose\|Sequence"</span>
 <span class="gp gp-VirtualEnv">(300a, 0010)</span>  <span class="go">Dose Reference Sequence  2 item(s) ----</span>
-<span class="gp gp-VirtualEnv">(300a, 0012)</span> <span class="go">Dose Reference Number               IS: &quot;1&quot;</span>
-<span class="gp gp-VirtualEnv">(300a, 0014)</span> <span class="go">Dose Reference Structure Type       CS: &#39;COORDINATES&#39;</span>
-<span class="gp gp-VirtualEnv">(300a, 0016)</span> <span class="go">Dose Reference Description          LO: &#39;iso&#39;</span>
+<span class="gp gp-VirtualEnv">(300a, 0012)</span> <span class="go">Dose Reference Number               IS: "1"</span>
+<span class="gp gp-VirtualEnv">(300a, 0014)</span> <span class="go">Dose Reference Structure Type       CS: 'COORDINATES'</span>
+<span class="gp gp-VirtualEnv">(300a, 0016)</span> <span class="go">Dose Reference Description          LO: 'iso'</span>
 <span class="gp gp-VirtualEnv">(300a, 0018)</span> <span class="go">Dose Reference Point Coordinates    DS: [239.531250000000, 239.531250000000, -741.87000000000]</span>
-<span class="gp gp-VirtualEnv">(300a, 0020)</span> <span class="go">Dose Reference Type                 CS: &#39;ORGAN_AT_RISK&#39;</span>
-<span class="gp gp-VirtualEnv">(300a, 0023)</span> <span class="go">Delivery Maximum Dose               DS: &quot;75.0&quot;</span>
-<span class="gp gp-VirtualEnv">(300a, 002c)</span> <span class="go">Organ at Risk Maximum Dose          DS: &quot;75.0&quot;</span>
-<span class="gp gp-VirtualEnv">(300a, 0012)</span> <span class="go">Dose Reference Number               IS: &quot;2&quot;</span>
-<span class="gp gp-VirtualEnv">(300a, 0014)</span> <span class="go">Dose Reference Structure Type       CS: &#39;COORDINATES&#39;</span>
-<span class="gp gp-VirtualEnv">(300a, 0016)</span> <span class="go">Dose Reference Description          LO: &#39;PTV&#39;</span>
+<span class="gp gp-VirtualEnv">(300a, 0020)</span> <span class="go">Dose Reference Type                 CS: 'ORGAN_AT_RISK'</span>
+<span class="gp gp-VirtualEnv">(300a, 0023)</span> <span class="go">Delivery Maximum Dose               DS: "75.0"</span>
+<span class="gp gp-VirtualEnv">(300a, 002c)</span> <span class="go">Organ at Risk Maximum Dose          DS: "75.0"</span>
+<span class="gp gp-VirtualEnv">(300a, 0012)</span> <span class="go">Dose Reference Number               IS: "2"</span>
+<span class="gp gp-VirtualEnv">(300a, 0014)</span> <span class="go">Dose Reference Structure Type       CS: 'COORDINATES'</span>
+<span class="gp gp-VirtualEnv">(300a, 0016)</span> <span class="go">Dose Reference Description          LO: 'PTV'</span>
 <span class="gp gp-VirtualEnv">(300a, 0018)</span> <span class="go">Dose Reference Point Coordinates    DS: [239.531250000000, 239.531250000000, -751.87000000000]</span>
-<span class="gp gp-VirtualEnv">(300a, 0020)</span> <span class="go">Dose Reference Type                 CS: &#39;TARGET&#39;</span>
-<span class="gp gp-VirtualEnv">(300a, 0026)</span> <span class="go">Target Prescription Dose            DS: &quot;30.826203&quot;</span>
+<span class="gp gp-VirtualEnv">(300a, 0020)</span> <span class="go">Dose Reference Type                 CS: 'TARGET'</span>
+<span class="gp gp-VirtualEnv">(300a, 0026)</span> <span class="go">Target Prescription Dose            DS: "30.826203"</span>
 <span class="gp gp-VirtualEnv">(300a, 0070)</span>  <span class="go">Fraction Group Sequence  1 item(s) ----</span>
 <span class="gp gp-VirtualEnv">(300c, 0004)</span>  <span class="go">Referenced Beam Sequence  1 item(s) ----</span>
 <span class="go">    (300a, 0082) Beam Dose Specification Point       DS: [239.531250000000, 239.531250000000, -751.87000000000]</span>
-<span class="go">    (300a, 0084) Beam Dose                           DS: &quot;1.0275401&quot;</span>
+<span class="go">    (300a, 0084) Beam Dose                           DS: "1.0275401"</span>
 <span class="gp gp-VirtualEnv">(300a, 00b0)</span>  <span class="go">Beam Sequence  1 item(s) ----</span>
 <span class="gp gp-VirtualEnv">(300a, 00b6)</span>  <span class="go">Beam Limiting Device Sequence  2 item(s) ----</span>
 <span class="gp gp-VirtualEnv">(300a, 0111)</span>  <span class="go">Control Point Sequence  2 item(s) ----</span>
-<span class="go">    (300a, 0115) Dose Rate Set                       DS: &quot;650.0&quot;</span>
+<span class="go">    (300a, 0115) Dose Rate Set                       DS: "650.0"</span>
 <span class="go">    (300a, 011a)  Beam Limiting Device Position Sequence  2 item(s) ----</span>
 <span class="go">    (300c, 0050)  Referenced Dose Reference Sequence  2 item(s) ----</span>
-<span class="go">        (300a, 010c) Cumulative Dose Reference Coefficie DS: &quot;0.0&quot;</span>
-<span class="go">        (300c, 0051) Referenced Dose Reference Number    IS: &quot;1&quot;</span>
-<span class="go">        (300a, 010c) Cumulative Dose Reference Coefficie DS: &quot;0.0&quot;</span>
-<span class="go">        (300c, 0051) Referenced Dose Reference Number    IS: &quot;2&quot;</span>
+<span class="go">        (300a, 010c) Cumulative Dose Reference Coefficie DS: "0.0"</span>
+<span class="go">        (300c, 0051) Referenced Dose Reference Number    IS: "1"</span>
+<span class="go">        (300a, 010c) Cumulative Dose Reference Coefficie DS: "0.0"</span>
+<span class="go">        (300c, 0051) Referenced Dose Reference Number    IS: "2"</span>
 <span class="go">    (300c, 0050)  Referenced Dose Reference Sequence  2 item(s) ----</span>
-<span class="go">        (300a, 010c) Cumulative Dose Reference Coefficie DS: &quot;0.9990268&quot;</span>
-<span class="go">        (300c, 0051) Referenced Dose Reference Number    IS: &quot;1&quot;</span>
-<span class="go">        (300a, 010c) Cumulative Dose Reference Coefficie DS: &quot;1.0&quot;</span>
-<span class="go">        (300c, 0051) Referenced Dose Reference Number    IS: &quot;2&quot;</span>
+<span class="go">        (300a, 010c) Cumulative Dose Reference Coefficie DS: "0.9990268"</span>
+<span class="go">        (300c, 0051) Referenced Dose Reference Number    IS: "1"</span>
+<span class="go">        (300a, 010c) Cumulative Dose Reference Coefficie DS: "1.0"</span>
+<span class="go">        (300c, 0051) Referenced Dose Reference Number    IS: "2"</span>
 <span class="gp gp-VirtualEnv">(300a, 0180)</span>  <span class="go">Patient Setup Sequence  1 item(s) ----</span>
 <span class="gp gp-VirtualEnv">(300c, 0002)</span>  <span class="go">Referenced RT Plan Sequence  1 item(s) ----</span>
 <span class="gp gp-VirtualEnv">(300c, 0060)</span>  <span class="go">Referenced Structure Set Sequence  1 item(s) ----</span>
@@ -677,8 +677,8 @@ within the file.</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -712,7 +712,7 @@ within the file.</p>
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
 </p></div>
       
     </div>

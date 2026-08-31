@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/pydicom.css?v=0f9d927c" />
@@ -41,10 +41,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
 
     <script src="../../_static/documentation_options.js?v=d3077db3"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
@@ -55,7 +55,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'guides/cli/cli_show';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.20.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.21.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = '_static/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -510,7 +510,7 @@ or <code class="docutils literal notranslate"><span class="pre">pydicom</span> <
 <span class="go">optional arguments:</span>
 <span class="go">-h, --help            show this help message and exit</span>
 <span class="go">-x, --exclude-private</span>
-<span class="go">                        Don&#39;t show private data elements</span>
+<span class="go">                        Don't show private data elements</span>
 <span class="go">-t, --top             Only show top level</span>
 <span class="go">-q, --quiet           Only show basic information</span>
 </pre></div>
@@ -519,22 +519,22 @@ or <code class="docutils literal notranslate"><span class="pre">pydicom</span> <
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pydicom<span class="w"> </span>show<span class="w"> </span>pydicom::CT_small.dcm
 <span class="go">Dataset.file_meta -------------------------------</span>
 <span class="gp gp-VirtualEnv">(0002, 0000)</span> <span class="go">File Meta Information Group Length  UL: 192</span>
-<span class="gp gp-VirtualEnv">(0002, 0001)</span> <span class="go">File Meta Information Version       OB: b&#39;\x00\x01&#39;</span>
+<span class="gp gp-VirtualEnv">(0002, 0001)</span> <span class="go">File Meta Information Version       OB: b'\x00\x01'</span>
 <span class="gp gp-VirtualEnv">(0002, 0002)</span> <span class="go">Media Storage SOP Class UID         UI: CT Image Storage</span>
 <span class="gp gp-VirtualEnv">(0002, 0003)</span> <span class="go">Media Storage SOP Instance UID      UI: 1.3.6.1.4.1.5962.1.1.1.1.1.20040119072730.12322</span>
 <span class="gp gp-VirtualEnv">(0002, 0010)</span> <span class="go">Transfer Syntax UID                 UI: Explicit VR Little Endian</span>
 <span class="gp gp-VirtualEnv">(0002, 0012)</span> <span class="go">Implementation Class UID            UI: 1.3.6.1.4.1.5962.2</span>
-<span class="gp gp-VirtualEnv">(0002, 0013)</span> <span class="go">Implementation Version Name         SH: &#39;DCTOOL100&#39;</span>
-<span class="gp gp-VirtualEnv">(0002, 0016)</span> <span class="go">Source Application Entity Title     AE: &#39;CLUNIE1&#39;</span>
+<span class="gp gp-VirtualEnv">(0002, 0013)</span> <span class="go">Implementation Version Name         SH: 'DCTOOL100'</span>
+<span class="gp gp-VirtualEnv">(0002, 0016)</span> <span class="go">Source Application Entity Title     AE: 'CLUNIE1'</span>
 <span class="go">-------------------------------------------------</span>
-<span class="gp gp-VirtualEnv">(0008, 0005)</span> <span class="go">Specific Character Set              CS: &#39;ISO_IR 100&#39;</span>
-<span class="gp gp-VirtualEnv">(0008, 0008)</span> <span class="go">Image Type                          CS: [&#39;ORIGINAL&#39;, &#39;PRIMARY&#39;, &#39;AXIAL&#39;]</span>
-<span class="gp gp-VirtualEnv">(0008, 0012)</span> <span class="go">Instance Creation Date              DA: &#39;20040119&#39;</span>
-<span class="gp gp-VirtualEnv">(0008, 0013)</span> <span class="go">Instance Creation Time              TM: &#39;072731&#39;</span>
+<span class="gp gp-VirtualEnv">(0008, 0005)</span> <span class="go">Specific Character Set              CS: 'ISO_IR 100'</span>
+<span class="gp gp-VirtualEnv">(0008, 0008)</span> <span class="go">Image Type                          CS: ['ORIGINAL', 'PRIMARY', 'AXIAL']</span>
+<span class="gp gp-VirtualEnv">(0008, 0012)</span> <span class="go">Instance Creation Date              DA: '20040119'</span>
+<span class="gp gp-VirtualEnv">(0008, 0013)</span> <span class="go">Instance Creation Time              TM: '072731'</span>
 <span class="gp gp-VirtualEnv">(0008, 0014)</span> <span class="go">Instance Creator UID                UI: 1.3.6.1.4.1.5962.3</span>
 <span class="gp gp-VirtualEnv">(0008, 0016)</span> <span class="go">SOP Class UID                       UI: CT Image Storage</span>
 <span class="gp gp-VirtualEnv">(0008, 0018)</span> <span class="go">SOP Instance UID                    UI: 1.3.6.1.4.1.5962.1.1.1.1.1.20040119072730.12322</span>
-<span class="gp gp-VirtualEnv">(0008, 0020)</span> <span class="go">Study Date                          DA: &#39;20040119&#39;</span>
+<span class="gp gp-VirtualEnv">(0008, 0020)</span> <span class="go">Study Date                          DA: '20040119'</span>
 <span class="go">.</span>
 <span class="go">.</span>
 <span class="go">.</span>
@@ -554,15 +554,15 @@ using the usual pydicom keyword notation:</p>
 <span class="go">CompressedSamples^CT1</span>
 
 <span class="gp">$ </span>pydicom<span class="w"> </span>show<span class="w"> </span>pydicom::rtplan.dcm::FractionGroupSequence
-<span class="go">[(300a, 0071) Fraction Group Number               IS: &quot;1&quot;</span>
-<span class="gp gp-VirtualEnv">(300a, 0078)</span> <span class="go">Number of Fractions Planned         IS: &quot;30&quot;</span>
-<span class="gp gp-VirtualEnv">(300a, 0080)</span> <span class="go">Number of Beams                     IS: &quot;1&quot;</span>
-<span class="gp gp-VirtualEnv">(300a, 00a0)</span> <span class="go">Number of Brachy Application Setups IS: &quot;0&quot;</span>
+<span class="go">[(300a, 0071) Fraction Group Number               IS: "1"</span>
+<span class="gp gp-VirtualEnv">(300a, 0078)</span> <span class="go">Number of Fractions Planned         IS: "30"</span>
+<span class="gp gp-VirtualEnv">(300a, 0080)</span> <span class="go">Number of Beams                     IS: "1"</span>
+<span class="gp gp-VirtualEnv">(300a, 00a0)</span> <span class="go">Number of Brachy Application Setups IS: "0"</span>
 <span class="gp gp-VirtualEnv">(300c, 0004)</span>  <span class="go">Referenced Beam Sequence  1 item(s) ----</span>
 <span class="gp gp-VirtualEnv">(300a, 0082)</span> <span class="go">Beam Dose Specification Point       DS: [239.531250000000, 239.531250000000, -751.87000000000]</span>
-<span class="gp gp-VirtualEnv">(300a, 0084)</span> <span class="go">Beam Dose                           DS: &quot;1.0275401&quot;</span>
-<span class="gp gp-VirtualEnv">(300a, 0086)</span> <span class="go">Beam Meterset                       DS: &quot;116.0036697&quot;</span>
-<span class="gp gp-VirtualEnv">(300c, 0006)</span> <span class="go">Referenced Beam Number              IS: &quot;1&quot;</span>
+<span class="gp gp-VirtualEnv">(300a, 0084)</span> <span class="go">Beam Dose                           DS: "1.0275401"</span>
+<span class="gp gp-VirtualEnv">(300a, 0086)</span> <span class="go">Beam Meterset                       DS: "116.0036697"</span>
+<span class="gp gp-VirtualEnv">(300c, 0006)</span> <span class="go">Referenced Beam Number              IS: "1"</span>
 <span class="go">---------]</span>
 </pre></div>
 </div>
@@ -571,8 +571,8 @@ using the usual pydicom keyword notation:</p>
 <span class="go">[107, 21, 4, 2, 20]</span>
 
 <span class="gp">$ </span>pydicom<span class="w"> </span>show<span class="w"> </span>pydicom::rtplan.dcm::<span class="o">(</span>300A,00B0<span class="o">)[</span><span class="m">0</span><span class="o">]</span>.<span class="o">(</span>300a,0111<span class="o">)</span>
-<span class="go">[(300A,0112) Control Point Index                 IS: &#39;0&#39;</span>
-<span class="gp gp-VirtualEnv">(300A,0114)</span> <span class="go">Nominal Beam Energy                 DS: &#39;6.00000000000000&#39;</span>
+<span class="go">[(300A,0112) Control Point Index                 IS: '0'</span>
+<span class="gp gp-VirtualEnv">(300A,0114)</span> <span class="go">Nominal Beam Energy                 DS: '6.00000000000000'</span>
 <span class="go">...</span>
 </pre></div>
 </div>
@@ -609,7 +609,7 @@ and VR). The example below shows the quiet mode with an image slice:</p>
 <span class="go">Fraction Group 1  30 fraction(s) planned</span>
 <span class="go">Brachy Application Setups: 0</span>
 <span class="go">Beam 1 Dose 1.02754010000000 Meterset 116.003669700000</span>
-<span class="go">Beam 1 &#39;Field 1&#39; TREATMENT STATIC PHOTON energy 6.00000000000000 gantry 0.0, coll 0.0, couch 0.0 (0 wedges, 0 comps, 0 boli, 0 blocks)</span>
+<span class="go">Beam 1 'Field 1' TREATMENT STATIC PHOTON energy 6.00000000000000 gantry 0.0, coll 0.0, couch 0.0 (0 wedges, 0 comps, 0 boli, 0 blocks)</span>
 </pre></div>
 </div>
 <p>Quiet modes always show the SOP Class UID, patient and study information as
@@ -648,8 +648,8 @@ issues list or a pull request to help us expand the list of custom
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -683,7 +683,7 @@ issues list or a pull request to help us expand the list of custom
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
 </p></div>
       
     </div>

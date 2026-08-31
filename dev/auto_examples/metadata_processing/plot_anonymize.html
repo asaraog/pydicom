@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/pydicom.css?v=0f9d927c" />
@@ -41,10 +41,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
 
     <script src="../../_static/documentation_options.js?v=d3077db3"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
@@ -55,7 +55,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'auto_examples/metadata_processing/plot_anonymize';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.20.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.21.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = '_static/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -557,20 +557,20 @@ optionally remove curves and private tags, and write the results in a new file.<
 
 <span class="n">ds</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">mr</span>
 
-<span class="k">for</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">keyword</span></a> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;PatientID&quot;</span><span class="p">,</span> <span class="s2">&quot;PatientBirthDate&quot;</span><span class="p">]:</span>
+<span class="k">for</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">keyword</span></a> <span class="ow">in</span> <span class="p">[</span><span class="s2">"PatientID"</span><span class="p">,</span> <span class="s2">"PatientBirthDate"</span><span class="p">]:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">data_element</span><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">keyword</span></a><span class="p">))</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>(0010,0020) Patient ID                          LO: &#39;4MR1&#39;
-(0010,0030) Patient&#39;s Birth Date                DA: &#39;&#39;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>(0010,0020) Patient ID                          LO: '4MR1'
+(0010,0030) Patient's Birth Date                DA: ''
 </pre></div>
 </div>
 <p>We can define a callback function to find all tags corresponding to a person
 names inside the dataset. We can also define a callback function to remove
 curves tags.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">person_names_callback</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">elem</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">elem</span><span class="o">.</span><span class="n">VR</span> <span class="o">==</span> <span class="s2">&quot;PN&quot;</span><span class="p">:</span>
-        <span class="n">elem</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;anonymous&quot;</span>
+    <span class="k">if</span> <span class="n">elem</span><span class="o">.</span><span class="n">VR</span> <span class="o">==</span> <span class="s2">"PN"</span><span class="p">:</span>
+        <span class="n">elem</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s2">"anonymous"</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">curves_callback</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">elem</span><span class="p">):</span>
@@ -580,7 +580,7 @@ curves tags.</p>
 </div>
 <p>We can use the different callback function to iterate through the dataset but
 also some other tags such that patient ID, etc.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ds</span><span class="o">.</span><span class="n">PatientID</span></a> <span class="o">=</span> <span class="s2">&quot;id&quot;</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ds</span><span class="o">.</span><span class="n">PatientID</span></a> <span class="o">=</span> <span class="s2">"id"</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">person_names_callback</span><span class="p">)</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">curves_callback</span><span class="p">)</span>
 </pre></div>
@@ -591,33 +591,33 @@ also some other tags such that patient ID, etc.</p>
 </div>
 <p>Data elements of type 3 (optional) can be easily deleted using <code class="docutils literal notranslate"><span class="pre">del</span></code> or
 <code class="docutils literal notranslate"><span class="pre">delattr</span></code>.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s2">&quot;OtherPatientIDs&quot;</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">:</span>
-    <span class="nb">delattr</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="s2">&quot;OtherPatientIDs&quot;</span><span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s2">"OtherPatientIDs"</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">:</span>
+    <span class="nb">delattr</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="s2">"OtherPatientIDs"</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="s2">&quot;OtherPatientIDsSequence&quot;</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">:</span>
+<span class="k">if</span> <span class="s2">"OtherPatientIDsSequence"</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">:</span>
     <span class="k">del</span> <span class="n">ds</span><span class="o">.</span><span class="n">OtherPatientIDsSequence</span>
 </pre></div>
 </div>
 <p>For data elements of type 2, this is possible to blank it by assigning a
 blank string.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">tag</span></a> <span class="o">=</span> <span class="s2">&quot;PatientBirthDate&quot;</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">tag</span></a> <span class="o">=</span> <span class="s2">"PatientBirthDate"</span>
 <span class="k">if</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">tag</span></a> <span class="ow">in</span> <span class="n">ds</span><span class="p">:</span>
-    <span class="n">ds</span><span class="o">.</span><span class="n">data_element</span><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">tag</span></a><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;19000101&quot;</span>
+    <span class="n">ds</span><span class="o">.</span><span class="n">data_element</span><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">tag</span></a><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s2">"19000101"</span>
 </pre></div>
 </div>
 <p>Finally, this is possible to store the image</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">keyword</span></a> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;PatientID&quot;</span><span class="p">,</span> <span class="s2">&quot;PatientBirthDate&quot;</span><span class="p">]:</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">keyword</span></a> <span class="ow">in</span> <span class="p">[</span><span class="s2">"PatientID"</span><span class="p">,</span> <span class="s2">"PatientBirthDate"</span><span class="p">]:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">data_element</span><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">keyword</span></a><span class="p">))</span>
 
 <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">path</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/tempfile.html#tempfile.NamedTemporaryFile" title="tempfile.NamedTemporaryFile" class="sphx-glr-backref-module-tempfile sphx-glr-backref-type-py-function"><span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span></a><span class="p">()</span><span class="o">.</span><span class="n">name</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">save_as</span><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">path</span></a><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>(0010,0020) Patient ID                          LO: &#39;id&#39;
-(0010,0030) Patient&#39;s Birth Date                DA: &#39;19000101&#39;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>(0010,0020) Patient ID                          LO: 'id'
+(0010,0030) Patient's Birth Date                DA: '19000101'
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.007 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.010 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-metadata-processing-plot-anonymize-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/de1da3fdb216bd623a5999980785f16d/plot_anonymize.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_anonymize.ipynb</span></code></a></p>
@@ -697,8 +697,8 @@ blank string.</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -732,7 +732,7 @@ blank string.</p>
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
 </p></div>
       
     </div>

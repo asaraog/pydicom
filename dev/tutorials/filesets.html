@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/css/pydicom.css?v=0f9d927c" />
@@ -41,10 +41,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
 
     <script src="../_static/documentation_options.js?v=d3077db3"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
@@ -55,7 +55,7 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/filesets';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.20.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.21.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = '_static/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -571,7 +571,7 @@ require recalculating the offsets for each directory record. Use the
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pydicom</span><span class="w"> </span><span class="kn">import</span> <span class="n">examples</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">dicomdir</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">file_meta</span><span class="o">.</span><span class="n">MediaStorageSOPClassUID</span><span class="o">.</span><span class="n">name</span>
-<span class="go">&#39;Media Storage Directory Storage&#39;</span>
+<span class="go">'Media Storage Directory Storage'</span>
 </pre></div>
 </div>
 <p>The most important element in a DICOMDIR is the (0004,1220) <em>Directory
@@ -585,10 +585,10 @@ given in <a class="extlink-dcm reference external" href="http://dicom.nema.org/m
 <span class="go">(0004, 1400) Offset of the Next Directory Record UL: 3126</span>
 <span class="go">(0004, 1410) Record In-use Flag                  US: 65535</span>
 <span class="go">(0004, 1420) Offset of Referenced Lower-Level Di UL: 510</span>
-<span class="go">(0004, 1430) Directory Record Type               CS: &#39;PATIENT&#39;</span>
-<span class="go">(0008, 0005) Specific Character Set              CS: &#39;ISO_IR 100&#39;</span>
-<span class="go">(0010, 0010) Patient&#39;s Name                      PN: &#39;Doe^Archibald&#39;</span>
-<span class="go">(0010, 0020) Patient ID                          LO: &#39;77654033&#39;</span>
+<span class="go">(0004, 1430) Directory Record Type               CS: 'PATIENT'</span>
+<span class="go">(0008, 0005) Specific Character Set              CS: 'ISO_IR 100'</span>
+<span class="go">(0010, 0010) Patient's Name                      PN: 'Doe^Archibald'</span>
+<span class="go">(0010, 0020) Patient ID                          LO: '77654033'</span>
 </pre></div>
 </div>
 <p>Here we have a <code class="docutils literal notranslate"><span class="pre">'PATIENT'</span></code> record, which from <a class="extlink-dcm reference external" href="http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_F.5.html#table_F.5-1">Table F.5-1</a> we see must also contain <em>Patient’s Name</em>
@@ -611,7 +611,7 @@ system changes. A more user-friendly way to interact with one is via the
 <a class="reference internal" href="../reference/generated/pydicom.fileset.FileSet.html#pydicom.fileset.FileSet" title="pydicom.fileset.FileSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">FileSet</span></code></a>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pydicom</span><span class="w"> </span><span class="kn">import</span> <span class="n">dcmread</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pydicom.fileset</span><span class="w"> </span><span class="kn">import</span> <span class="n">FileSet</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">path</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">get_path</span><span class="p">(</span><span class="s2">&quot;dicomdir&quot;</span><span class="p">)</span>  <span class="c1"># The path to the examples.dicomdir dataset</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">path</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">get_path</span><span class="p">(</span><span class="s2">"dicomdir"</span><span class="p">)</span>  <span class="c1"># The path to the examples.dicomdir dataset</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">dcmread</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span> <span class="o">=</span> <span class="n">FileSet</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>  <span class="c1"># or FileSet(path)</span>
 </pre></div>
@@ -627,34 +627,34 @@ system changes. A more user-friendly way to interact with one is via the
 <span class="go">  Changes staged for write(): DICOMDIR update, directory structure update</span>
 
 <span class="go">  Managed instances:</span>
-<span class="go">    PATIENT: PatientID=&#39;77654033&#39;, PatientName=&#39;Doe^Archibald&#39;</span>
-<span class="go">      STUDY: StudyDate=20010101, StudyTime=000000, StudyDescription=&#39;XR C Spine Comp Min 4 Views&#39;</span>
+<span class="go">    PATIENT: PatientID='77654033', PatientName='Doe^Archibald'</span>
+<span class="go">      STUDY: StudyDate=20010101, StudyTime=000000, StudyDescription='XR C Spine Comp Min 4 Views'</span>
 <span class="go">        SERIES: Modality=CR, SeriesNumber=1</span>
 <span class="go">          IMAGE: 1 SOP Instance</span>
 <span class="go">        SERIES: Modality=CR, SeriesNumber=2</span>
 <span class="go">          IMAGE: 1 SOP Instance</span>
 <span class="go">        SERIES: Modality=CR, SeriesNumber=3</span>
 <span class="go">          IMAGE: 1 SOP Instance</span>
-<span class="go">      STUDY: StudyDate=19950903, StudyTime=173032, StudyDescription=&#39;CT, HEAD/BRAIN WO CONTRAST&#39;</span>
+<span class="go">      STUDY: StudyDate=19950903, StudyTime=173032, StudyDescription='CT, HEAD/BRAIN WO CONTRAST'</span>
 <span class="go">        SERIES: Modality=CT, SeriesNumber=2</span>
 <span class="go">          IMAGE: 4 SOP Instances</span>
-<span class="go">    PATIENT: PatientID=&#39;98890234&#39;, PatientName=&#39;Doe^Peter&#39;</span>
+<span class="go">    PATIENT: PatientID='98890234', PatientName='Doe^Peter'</span>
 <span class="go">      STUDY: StudyDate=20010101, StudyTime=000000</span>
 <span class="go">        SERIES: Modality=CT, SeriesNumber=4</span>
 <span class="go">          IMAGE: 2 SOP Instances</span>
 <span class="go">        SERIES: Modality=CT, SeriesNumber=5</span>
 <span class="go">          IMAGE: 5 SOP Instances</span>
-<span class="go">      STUDY: StudyDate=20030505, StudyTime=050743, StudyDescription=&#39;Carotids&#39;</span>
+<span class="go">      STUDY: StudyDate=20030505, StudyTime=050743, StudyDescription='Carotids'</span>
 <span class="go">        SERIES: Modality=MR, SeriesNumber=1</span>
 <span class="go">          IMAGE: 1 SOP Instance</span>
 <span class="go">        SERIES: Modality=MR, SeriesNumber=2</span>
 <span class="go">          IMAGE: 1 SOP Instance</span>
-<span class="go">      STUDY: StudyDate=20030505, StudyTime=025109, StudyDescription=&#39;Brain&#39;</span>
+<span class="go">      STUDY: StudyDate=20030505, StudyTime=025109, StudyDescription='Brain'</span>
 <span class="go">        SERIES: Modality=MR, SeriesNumber=1</span>
 <span class="go">          IMAGE: 1 SOP Instance</span>
 <span class="go">        SERIES: Modality=MR, SeriesNumber=2</span>
 <span class="go">          IMAGE: 3 SOP Instances</span>
-<span class="go">      STUDY: StudyDate=20030505, StudyTime=045357, StudyDescription=&#39;Brain-MRA&#39;</span>
+<span class="go">      STUDY: StudyDate=20030505, StudyTime=045357, StudyDescription='Brain-MRA'</span>
 <span class="go">        SERIES: Modality=MR, SeriesNumber=1</span>
 <span class="go">          IMAGE: 1 SOP Instance</span>
 <span class="go">        SERIES: Modality=MR, SeriesNumber=2</span>
@@ -679,17 +679,17 @@ instances.</p>
 <p>A list of unique element values within the File-set can be found using the
 <a class="reference internal" href="../reference/generated/pydicom.fileset.FileSet.html#pydicom.fileset.FileSet.find_values" title="pydicom.fileset.FileSet.find_values"><code class="xref py py-meth docutils literal notranslate"><span class="pre">find_values()</span></code></a> method, which by default
 searches the corresponding DICOMDIR records:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">find_values</span><span class="p">(</span><span class="s2">&quot;PatientID&quot;</span><span class="p">)</span>
-<span class="go">[&#39;77654033&#39;, &#39;98890234&#39;]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">find_values</span><span class="p">(</span><span class="s2">"PatientID"</span><span class="p">)</span>
+<span class="go">['77654033', '98890234']</span>
 </pre></div>
 </div>
 <p>The search can be expanded to the File-set’s managed instances by supplying
 the <cite>load</cite> parameter, at the cost of a longer search time due to having
 to read and decode the corresponding files:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">find_values</span><span class="p">(</span><span class="s2">&quot;PhotometricInterpretation&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">find_values</span><span class="p">(</span><span class="s2">"PhotometricInterpretation"</span><span class="p">)</span>
 <span class="go">[]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">find_values</span><span class="p">(</span><span class="s2">&quot;PhotometricInterpretation&quot;</span><span class="p">,</span> <span class="n">load</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="go">[&#39;MONOCHROME1&#39;, &#39;MONOCHROME2&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">find_values</span><span class="p">(</span><span class="s2">"PhotometricInterpretation"</span><span class="p">,</span> <span class="n">load</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">['MONOCHROME1', 'MONOCHROME2']</span>
 </pre></div>
 </div>
 <p>More importantly, the File-set can be searched to find instances matching
@@ -697,7 +697,7 @@ a query using the <a class="reference internal" href="../reference/generated/pyd
 a list of <a class="reference internal" href="../reference/generated/pydicom.fileset.FileInstance.html#pydicom.fileset.FileInstance" title="pydicom.fileset.FileInstance"><code class="xref py py-class docutils literal notranslate"><span class="pre">FileInstance</span></code></a>. The corresponding file
 can then be read and decoded using <a class="reference internal" href="../reference/generated/pydicom.fileset.FileInstance.html#pydicom.fileset.FileInstance.load" title="pydicom.fileset.FileInstance.load"><code class="xref py py-meth docutils literal notranslate"><span class="pre">FileInstance.load()</span></code></a>, returning it as a
 <a class="reference internal" href="../reference/generated/pydicom.dataset.FileDataset.html#pydicom.dataset.FileDataset" title="pydicom.dataset.FileDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">FileDataset</span></code></a>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">instance</span> <span class="ow">in</span> <span class="n">fs</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">PatientID</span><span class="o">=</span><span class="s1">&#39;77654033&#39;</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">instance</span> <span class="ow">in</span> <span class="n">fs</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">PatientID</span><span class="o">=</span><span class="s1">'77654033'</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">ds</span> <span class="o">=</span> <span class="n">instance</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">PhotometricInterpretation</span><span class="p">)</span>
 <span class="gp">...</span>
@@ -712,9 +712,9 @@ can then be read and decoded using <a class="reference internal" href="../refere
 </div>
 <p><a class="reference internal" href="../reference/generated/pydicom.fileset.FileSet.html#pydicom.fileset.FileSet.find" title="pydicom.fileset.FileSet.find"><code class="xref py py-func docutils literal notranslate"><span class="pre">find()</span></code></a> also supports the use of the <cite>load</cite>
 parameter:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">fs</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">PatientID</span><span class="o">=</span><span class="s1">&#39;77654033&#39;</span><span class="p">,</span> <span class="n">PhotometricInterpretation</span><span class="o">=</span><span class="s1">&#39;MONOCHROME1&#39;</span><span class="p">))</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">fs</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">PatientID</span><span class="o">=</span><span class="s1">'77654033'</span><span class="p">,</span> <span class="n">PhotometricInterpretation</span><span class="o">=</span><span class="s1">'MONOCHROME1'</span><span class="p">))</span>
 <span class="go">0</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">fs</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">PatientID</span><span class="o">=</span><span class="s1">&#39;77654033&#39;</span><span class="p">,</span> <span class="n">PhotometricInterpretation</span><span class="o">=</span><span class="s1">&#39;MONOCHROME1&#39;</span><span class="p">,</span> <span class="n">load</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">fs</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">PatientID</span><span class="o">=</span><span class="s1">'77654033'</span><span class="p">,</span> <span class="n">PhotometricInterpretation</span><span class="o">=</span><span class="s1">'MONOCHROME1'</span><span class="p">,</span> <span class="n">load</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 <span class="go">3</span>
 </pre></div>
 </div>
@@ -790,9 +790,9 @@ accessed and loaded:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">instance</span><span class="o">.</span><span class="n">for_addition</span>
 <span class="go">True</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">instance</span><span class="o">.</span><span class="n">path</span>
-<span class="go">&#39;/tmp/tmp0aalrzir/86e6b75b-b764-46af-bec3-51698a8366f2&#39;</span>
+<span class="go">'/tmp/tmp0aalrzir/86e6b75b-b764-46af-bec3-51698a8366f2'</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">instance</span><span class="o">.</span><span class="n">load</span><span class="p">())</span>
-<span class="go">&lt;class &#39;pydicom.dataset.FileDataset&#39;&gt;</span>
+<span class="go">&lt;class 'pydicom.dataset.FileDataset'&gt;</span>
 </pre></div>
 </div>
 <p>Alternatively, if you want more control over the directory records that will
@@ -806,23 +806,23 @@ is empty or missing:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rt_dose</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">rt_dose</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">rt_dose</span><span class="p">)</span>
 <span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;.../pydicom/fileset.py&quot;</span>, line <span class="m">1858</span>, in <span class="n">_recordify</span>
+  File <span class="nb">".../pydicom/fileset.py"</span>, line <span class="m">1858</span>, in <span class="n">_recordify</span>
 <span class="w">    </span><span class="n">record</span> <span class="o">=</span> <span class="n">DIRECTORY_RECORDERS</span><span class="p">[</span><span class="n">record_type</span><span class="p">](</span><span class="n">ds</span><span class="p">)</span>
-  File <span class="nb">&quot;.../pydicom/fileset.py&quot;</span>, line <span class="m">2338</span>, in <span class="n">_define_rt_dose</span>
-<span class="w">    </span><span class="n">_check_dataset</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;InstanceNumber&quot;</span><span class="p">,</span> <span class="s2">&quot;DoseSummationType&quot;</span><span class="p">])</span>
-  File <span class="nb">&quot;.../pydicom/fileset.py&quot;</span>, line <span class="m">2281</span>, in <span class="n">_check_dataset</span>
+  File <span class="nb">".../pydicom/fileset.py"</span>, line <span class="m">2338</span>, in <span class="n">_define_rt_dose</span>
+<span class="w">    </span><span class="n">_check_dataset</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="p">[</span><span class="s2">"InstanceNumber"</span><span class="p">,</span> <span class="s2">"DoseSummationType"</span><span class="p">])</span>
+  File <span class="nb">".../pydicom/fileset.py"</span>, line <span class="m">2281</span>, in <span class="n">_check_dataset</span>
 <span class="w">    </span><span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="gr">ValueError</span>: <span class="n">The instance&#39;s (0020, 0013) &#39;Instance Number&#39; element cannot be empty</span>
+<span class="gr">ValueError</span>: <span class="n">The instance's (0020, 0013) 'Instance Number' element cannot be empty</span>
 
 <span class="gt">The above exception was the direct cause of the following exception:</span>
 
 <span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
-  File <span class="nb">&quot;.../pydicom/fileset.py&quot;</span>, line <span class="m">1039</span>, in <span class="n">add</span>
+  File <span class="nb">"&lt;stdin&gt;"</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+  File <span class="nb">".../pydicom/fileset.py"</span>, line <span class="m">1039</span>, in <span class="n">add</span>
 <span class="w">    </span><span class="n">record</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">record_gen</span><span class="p">)</span>
-  File <span class="nb">&quot;.../pydicom/fileset.py&quot;</span>, line <span class="m">1860</span>, in <span class="n">_recordify</span>
+  File <span class="nb">".../pydicom/fileset.py"</span>, line <span class="m">1860</span>, in <span class="n">_recordify</span>
 <span class="w">    </span><span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="gr">ValueError</span>: <span class="n">Unable to use the default &#39;RT DOSE&#39; record creator as the instance is missing a required element or value. Either update the instance, define your own record creation function or use &#39;FileSet.add_custom()&#39; instead</span>
+<span class="gr">ValueError</span>: <span class="n">Unable to use the default 'RT DOSE' record creator as the instance is missing a required element or value. Either update the instance, define your own record creation function or use 'FileSet.add_custom()' instead</span>
 </pre></div>
 </div>
 <p>When this occurs, there are three options:</p>
@@ -834,7 +834,7 @@ is empty or missing:</p>
 </ul>
 <p>According to the exception message above, the <em>Instance Number</em> element is empty.
 Let’s update the instance and try adding it again:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rt_dose</span><span class="o">.</span><span class="n">InstanceNumber</span> <span class="o">=</span> <span class="s2">&quot;1&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rt_dose</span><span class="o">.</span><span class="n">InstanceNumber</span> <span class="o">=</span> <span class="s2">"1"</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">rt_dose</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -847,7 +847,7 @@ Let’s update the instance and try adding it again:</p>
 <a class="reference internal" href="../reference/generated/pydicom.fileset.FileInstance.html#pydicom.fileset.FileInstance" title="pydicom.fileset.FileInstance"><code class="xref py py-class docutils literal notranslate"><span class="pre">FileInstance</span></code></a> to be removed:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">fs</span><span class="p">)</span>
 <span class="go">2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">instances</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">PatientID</span><span class="o">=</span><span class="s2">&quot;1CT1&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">instances</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">PatientID</span><span class="o">=</span><span class="s2">"1CT1"</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">instances</span><span class="p">)</span>
 <span class="go">1</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">instances</span><span class="p">)</span>
@@ -871,12 +871,12 @@ path where the File-set root directory will be located:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">tempfile</span><span class="w"> </span><span class="kn">import</span> <span class="n">TemporaryDirectory</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">TemporaryDirectory</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">name</span>
-<span class="go">&#39;/tmp/tmpsqz8rhgb&#39;</span>
+<span class="go">'/tmp/tmpsqz8rhgb'</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">is_staged</span>
 <span class="go">False</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">root</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">root</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;**/*&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">is_file</span><span class="p">()]):</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">root</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">'**/*'</span><span class="p">)</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">is_file</span><span class="p">()]):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 <span class="gp">...</span>
 <span class="go">/tmp/tmpsqz8rhgb/DICOMDIR</span>
@@ -888,10 +888,10 @@ path where the File-set root directory will be located:</p>
 <p>The root directory for existing File-sets cannot be changed, so for those
 you only need to call <a class="reference internal" href="../reference/generated/pydicom.fileset.FileSet.html#pydicom.fileset.FileSet.write" title="pydicom.fileset.FileSet.write"><code class="xref py py-meth docutils literal notranslate"><span class="pre">write()</span></code></a> without any
 arguments:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">instances</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">PatientID</span><span class="o">=</span><span class="s2">&quot;1CT1&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">instances</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">PatientID</span><span class="o">=</span><span class="s2">"1CT1"</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">instances</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">write</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">root</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;**/*&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">is_file</span><span class="p">()]):</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">root</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">'**/*'</span><span class="p">)</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">is_file</span><span class="p">()]):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 <span class="gp">...</span>
 <span class="go">/tmp/tmpsqz8rhgb/DICOMDIR</span>
@@ -914,21 +914,21 @@ so we don’t accidentally modify it:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">shutil</span><span class="w"> </span><span class="kn">import</span> <span class="n">copytree</span><span class="p">,</span> <span class="n">copyfile</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">TemporaryDirectory</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dst</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">src</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">get_path</span><span class="p">(</span><span class="s2">&quot;dicomdir&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">copyfile</span><span class="p">(</span><span class="n">src</span> <span class="o">/</span> <span class="s2">&quot;DICOMDIR&quot;</span><span class="p">,</span> <span class="n">dst</span> <span class="o">/</span> <span class="s2">&quot;DICOMDIR&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">copytree</span><span class="p">(</span><span class="n">src</span> <span class="o">/</span> <span class="s2">&quot;77654033&quot;</span><span class="p">,</span> <span class="n">dst</span> <span class="o">/</span> <span class="s2">&quot;77654033&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">copytree</span><span class="p">(</span><span class="n">src</span> <span class="o">/</span> <span class="s2">&quot;98892001&quot;</span><span class="p">,</span> <span class="n">dst</span> <span class="o">/</span> <span class="s2">&quot;98892001&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">copytree</span><span class="p">(</span><span class="n">src</span> <span class="o">/</span> <span class="s2">&quot;98892003&quot;</span><span class="p">,</span> <span class="n">dst</span> <span class="o">/</span> <span class="s2">&quot;98892003&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">src</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">get_path</span><span class="p">(</span><span class="s2">"dicomdir"</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">copyfile</span><span class="p">(</span><span class="n">src</span> <span class="o">/</span> <span class="s2">"DICOMDIR"</span><span class="p">,</span> <span class="n">dst</span> <span class="o">/</span> <span class="s2">"DICOMDIR"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">copytree</span><span class="p">(</span><span class="n">src</span> <span class="o">/</span> <span class="s2">"77654033"</span><span class="p">,</span> <span class="n">dst</span> <span class="o">/</span> <span class="s2">"77654033"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">copytree</span><span class="p">(</span><span class="n">src</span> <span class="o">/</span> <span class="s2">"98892001"</span><span class="p">,</span> <span class="n">dst</span> <span class="o">/</span> <span class="s2">"98892001"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">copytree</span><span class="p">(</span><span class="n">src</span> <span class="o">/</span> <span class="s2">"98892003"</span><span class="p">,</span> <span class="n">dst</span> <span class="o">/</span> <span class="s2">"98892003"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Now we load the File-set from the temporary directory, remove instances and
 write out the changes with <em>use_existing</em> to keep the current directory
 structure:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span> <span class="o">=</span> <span class="n">FileSet</span><span class="p">(</span><span class="n">dst</span> <span class="o">/</span> <span class="s2">&quot;DICOMDIR&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">instances</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">PatientID</span><span class="o">=</span><span class="s2">&quot;98890234&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span> <span class="o">=</span> <span class="n">FileSet</span><span class="p">(</span><span class="n">dst</span> <span class="o">/</span> <span class="s2">"DICOMDIR"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">instances</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">PatientID</span><span class="o">=</span><span class="s2">"98890234"</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">instances</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">use_existing</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># Keep the current directory structure</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">dst</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;**/*&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">is_file</span><span class="p">()]):</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">dst</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">'**/*'</span><span class="p">)</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">is_file</span><span class="p">()]):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 <span class="gp">...</span>
 <span class="go">/tmp/tmpu068kdwp/DICOMDIR</span>
@@ -945,7 +945,7 @@ structure:</p>
 <em>use_existing</em>, then it would’ve moved the SOP instances to the new
 directory structure:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span><span class="o">.</span><span class="n">write</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">dst</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;**/*&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">is_file</span><span class="p">()]):</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">dst</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">'**/*'</span><span class="p">)</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">is_file</span><span class="p">()]):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 <span class="gp">...</span>
 <span class="go">/tmp/tmpu068kdwp/DICOMDIR</span>
@@ -1048,8 +1048,8 @@ to create new File-sets, and to load, search and modify existing ones.</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1083,7 +1083,7 @@ to create new File-sets, and to load, search and modify existing ones.</p>
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
 </p></div>
       
     </div>

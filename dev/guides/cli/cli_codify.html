@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/pydicom.css?v=0f9d927c" />
@@ -41,10 +41,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
 
     <script src="../../_static/documentation_options.js?v=d3077db3"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
@@ -55,7 +55,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'guides/cli/cli_codify';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.20.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.21.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = '_static/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -510,7 +510,7 @@ information.</p>
 <p>A simple example of using the <code class="docutils literal notranslate"><span class="pre">codify</span></code> command would be:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pydicom codify pydicom::rtplan.dcm
 
-# Coded version of DICOM file &#39;C:\git\pydicom\pydicom\data\test_files\rtplan.dcm&#39;
+# Coded version of DICOM file 'C:\git\pydicom\pydicom\data\test_files\rtplan.dcm'
 # Produced by pydicom codify utility script
 import pydicom
 from pydicom.dataset import Dataset, FileMetaDataset
@@ -518,12 +518,12 @@ from pydicom.sequence import Sequence
 
 # Main data elements
 ds = Dataset()
-ds.InstanceCreationDate = &#39;20030903&#39;
-ds.InstanceCreationTime = &#39;150031&#39;
-ds.SOPClassUID = &#39;1.2.840.10008.5.1.4.1.1.481.5&#39;
-ds.SOPInstanceUID = &#39;1.2.777.777.77.7.7777.7777.20030903150023&#39;
-ds.StudyDate = &#39;20030716&#39;
-ds.StudyTime = &#39;153557&#39;
+ds.InstanceCreationDate = '20030903'
+ds.InstanceCreationTime = '150031'
+ds.SOPClassUID = '1.2.840.10008.5.1.4.1.1.481.5'
+ds.SOPInstanceUID = '1.2.777.777.77.7.7777.7777.20030903150023'
+ds.StudyDate = '20030716'
+ds.StudyTime = '153557'
 .
 .
 .
@@ -559,7 +559,7 @@ optional arguments:
                         Include private data elements (default is to exclude them)
 -s SAVE_AS, --save-as SAVE_AS
                         Specify the filename for ds.save_as(save_filename); otherwise the input name
-                        + &#39;_from_codify&#39; will be used
+                        + '_from_codify' will be used
 
 Binary data (e.g. pixels) larger than --exclude-size (default 100 bytes) is not included. A dummy
 line with a syntax error is produced. Private data elements are not included by default.
@@ -590,10 +590,10 @@ rather than the whole file:</p>
 
 <span class="c1"># Main data elements</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">()</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">FractionGroupNumber</span> <span class="o">=</span> <span class="s2">&quot;1&quot;</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">NumberOfFractionsPlanned</span> <span class="o">=</span> <span class="s2">&quot;30&quot;</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">NumberOfBeams</span> <span class="o">=</span> <span class="s2">&quot;1&quot;</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">NumberOfBrachyApplicationSetups</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">FractionGroupNumber</span> <span class="o">=</span> <span class="s2">"1"</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">NumberOfFractionsPlanned</span> <span class="o">=</span> <span class="s2">"30"</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">NumberOfBeams</span> <span class="o">=</span> <span class="s2">"1"</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">NumberOfBrachyApplicationSetups</span> <span class="o">=</span> <span class="s2">"0"</span>
 
 <span class="c1"># Referenced Beam Sequence</span>
 <span class="n">refd_beam_sequence</span> <span class="o">=</span> <span class="n">Sequence</span><span class="p">()</span>
@@ -663,8 +663,8 @@ producing a number of sequence items.</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -698,7 +698,7 @@ producing a number of sequence items.</p>
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
 </p></div>
       
     </div>

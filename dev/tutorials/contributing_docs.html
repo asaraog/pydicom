@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/css/pydicom.css?v=0f9d927c" />
@@ -41,10 +41,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
 
     <script src="../_static/documentation_options.js?v=d3077db3"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
@@ -55,7 +55,7 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/contributing_docs';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.20.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.21.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = '_static/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -600,7 +600,7 @@ text:</p>
 </div>
 <p>Save it and build the documentation (<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code>). You should see a warning
 in the build output, which we’ll ignore for now:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>checking consistency... [/path/to]/pydicom/doc/tutorials/reading.rst: WARNING: document isn&#39;t included in any toctree
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>checking consistency... [/path/to]/pydicom/doc/tutorials/reading.rst: WARNING: document isn't included in any toctree
 </pre></div>
 </div>
 <p>Open the file <code class="docutils literal notranslate"><span class="pre">_build/html/tutorials/reading.html</span></code> in your browser (if you’re
@@ -633,7 +633,7 @@ Reading DICOM files
 ===================
 
 In this tutorial we will be reading a DICOM file using
-`pydicom &lt;https://github.com/pydicom/pydicom&gt;`_. The tasks you&#39;ll be doing
+`pydicom &lt;https://github.com/pydicom/pydicom&gt;`_. The tasks you'll be doing
 will include:
 
 * Installing *pydicom*
@@ -652,7 +652,7 @@ In a command window start a new **Python** session::
   $ python
   Python 3.6.5 (default, Apr  1 2018, 05:46:30)
   [GCC 7.3.0] on linux
-  Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+  Type "help", "copyright", "credits" or "license" for more information.
 
 .. note::
 
@@ -664,9 +664,9 @@ In a command window start a new **Python** session::
 
   &gt;&gt;&gt; from pydicom import dcmread
   &gt;&gt;&gt; from pydicom.data import get_testdata_file
-  &gt;&gt;&gt; path = get_testdata_file(&quot;CT_small.dcm&quot;)
+  &gt;&gt;&gt; path = get_testdata_file("CT_small.dcm")
   &gt;&gt;&gt; path
-  &#39;[path/to]/pydicom/data/test_files/CT_small.dcm&#39;
+  '[path/to]/pydicom/data/test_files/CT_small.dcm'
   &gt;&gt;&gt; ds = dcmread(path)
 
 Printing an element
@@ -675,7 +675,7 @@ To get a :class:`list` of keywords for all the elements in the top level of
 the dataset you can do:
 
   &gt;&gt;&gt; ds.dir()
-  [&#39;AccessionNumber&#39;, &#39;AcquisitionData&#39;, ..., &#39;PatientName&#39;, ..., &#39;XRayTubeCurrent&#39;]
+  ['AccessionNumber', 'AcquisitionData', ..., 'PatientName', ..., 'XRayTubeCurrent']
 
 To :func:`print` the value of the (0010,0010) *Patient Name* element:
 
@@ -684,8 +684,8 @@ To :func:`print` the value of the (0010,0010) *Patient Name* element:
 
 To print the element itself:
 
-  &gt;&gt;&gt; print(ds[&#39;PatientName&#39;])
-  (0010, 0010) Patient&#39;s Name                      PN: &#39;CompressedSamples^CT1&#39;
+  &gt;&gt;&gt; print(ds['PatientName'])
+  (0010, 0010) Patient's Name                      PN: 'CompressedSamples^CT1'
 </pre></div>
 </div>
 <p>If you need help with the reST markup then you can:</p>
@@ -706,7 +706,7 @@ happy with the results move on to the next section.</p>
 </pre></div>
 </div>
 <p>And then stage the remaining changes (<code class="docutils literal notranslate"><span class="pre">-a</span></code>) and commit at the same time:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">am</span> <span class="s2">&quot;Add documentation on reading a DICOM file&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">am</span> <span class="s2">"Add documentation on reading a DICOM file"</span>
 </pre></div>
 </div>
 <p>After committing the changes, send them to your fork:</p>
@@ -821,8 +821,8 @@ branch and click the corresponding red bin icon. All done!</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -856,7 +856,7 @@ branch and click the corresponding red bin icon. All done!</p>
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
 </p></div>
       
     </div>

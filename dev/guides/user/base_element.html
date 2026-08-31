@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/pydicom.css?v=0f9d927c" />
@@ -41,10 +41,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
 
     <script src="../../_static/documentation_options.js?v=d3077db3"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
@@ -55,7 +55,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'guides/user/base_element';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.20.0';
+        DOCUMENTATION_OPTIONS.theme_version = '0.21.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = '_static/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -554,10 +554,10 @@ prefer this to be explicit then iterate over <a class="reference internal" href=
 usually get one by reading an existing DICOM dataset from file using
 <a class="reference internal" href="../../reference/generated/pydicom.filereader.dcmread.html#pydicom.filereader.dcmread" title="pydicom.filereader.dcmread"><code class="xref py py-func docutils literal notranslate"><span class="pre">dcmread()</span></code></a>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pydicom</span><span class="w"> </span><span class="kn">import</span> <span class="n">dcmread</span><span class="p">,</span> <span class="n">examples</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Returns the path to pydicom&#39;s examples.rt_plan dataset</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">path</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">get_path</span><span class="p">(</span><span class="s2">&quot;rt_plan&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Returns the path to pydicom's examples.rt_plan dataset</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">path</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">get_path</span><span class="p">(</span><span class="s2">"rt_plan"</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-<span class="go">PosixPath(&#39;/path/to/pydicom/data/test_files/rtplan.dcm&#39;)</span>
+<span class="go">PosixPath('/path/to/pydicom/data/test_files/rtplan.dcm')</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Read the DICOM dataset at `path`</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">dcmread</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 </pre></div>
@@ -566,28 +566,28 @@ usually get one by reading an existing DICOM dataset from file using
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span>
 <span class="go">Dataset.file_meta -------------------------------</span>
 <span class="go">(0002,0000) File Meta Information Group Length  UL: 156</span>
-<span class="go">(0002,0001) File Meta Information Version       OB: b&#39;\x00\x01&#39;</span>
+<span class="go">(0002,0001) File Meta Information Version       OB: b'\x00\x01'</span>
 <span class="go">(0002,0002) Media Storage SOP Class UID         UI: RT Plan Storage</span>
 <span class="go">(0002,0003) Media Storage SOP Instance UID      UI: 1.2.999.999.99.9.9999.9999.20030903150023</span>
 <span class="go">(0002,0010) Transfer Syntax UID                 UI: Implicit VR Little Endian</span>
 <span class="go">(0002,0012) Implementation Class UID            UI: 1.2.888.888.88.8.8.8</span>
 <span class="go">-------------------------------------------------</span>
-<span class="go">(0008,0012) Instance Creation Date              DA: &#39;20030903&#39;</span>
-<span class="go">(0008,0013) Instance Creation Time              TM: &#39;150031&#39;</span>
+<span class="go">(0008,0012) Instance Creation Date              DA: '20030903'</span>
+<span class="go">(0008,0013) Instance Creation Time              TM: '150031'</span>
 <span class="go">(0008,0016) SOP Class UID                       UI: RT Plan Storage</span>
 <span class="go">(0008,0018) SOP Instance UID                    UI: 1.2.777.777.77.7.7777.7777.20030903150023</span>
-<span class="go">(0008,0020) Study Date                          DA: &#39;20030716&#39;</span>
-<span class="go">(0008,0030) Study Time                          TM: &#39;153557&#39;</span>
-<span class="go">(0008,0050) Accession Number                    SH: &#39;&#39;</span>
-<span class="go">(0008,0060) Modality                            CS: &#39;RTPLAN&#39;</span>
+<span class="go">(0008,0020) Study Date                          DA: '20030716'</span>
+<span class="go">(0008,0030) Study Time                          TM: '153557'</span>
+<span class="go">(0008,0050) Accession Number                    SH: ''</span>
+<span class="go">(0008,0060) Modality                            CS: 'RTPLAN'</span>
 <span class="go">...</span>
 </pre></div>
 </div>
 <p>You can access specific elements by their DICOM keyword or tag:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">PatientName</span>  <span class="c1"># element keyword</span>
-<span class="go">&#39;Last^First^mid^pre&#39;</span>
+<span class="go">'Last^First^mid^pre'</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="p">[</span><span class="mh">0x10</span><span class="p">,</span> <span class="mh">0x10</span><span class="p">]</span><span class="o">.</span><span class="n">value</span>  <span class="c1"># element tag</span>
-<span class="go">&#39;Last^First^mid^pre&#39;</span>
+<span class="go">'Last^First^mid^pre'</span>
 </pre></div>
 </div>
 <p>Unlike when accessing with a keyword which returns the element’s value, accessing with a tag
@@ -602,9 +602,9 @@ retrieve data elements. See details in <a class="reference internal" href="priva
 </div>
 <p>You can also set an element’s value by using the element’s keyword or tag
 number:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">PatientID</span> <span class="o">=</span> <span class="s2">&quot;12345&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">PatientID</span> <span class="o">=</span> <span class="s2">"12345"</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">SeriesNumber</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="p">[</span><span class="mh">0x10</span><span class="p">,</span> <span class="mh">0x10</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;Test&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="p">[</span><span class="mh">0x10</span><span class="p">,</span> <span class="mh">0x10</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s1">'Test'</span>
 </pre></div>
 </div>
 <p>Accessing element values via keywords is possible because <em>pydicom</em> intercepts requests
@@ -647,28 +647,28 @@ element can be one of:</p>
 instance, which acts like a Python <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>. Items in the sequence are
 referenced by number, beginning at index <code class="docutils literal notranslate"><span class="pre">0</span></code> as per Python convention:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">BeamSequence</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">BeamName</span>
-<span class="go">&#39;Field 1&#39;</span>
+<span class="go">'Field 1'</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Or, set an intermediate variable to a dataset in the list</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">beam1</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">BeamSequence</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># First dataset in the sequence</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">beam1</span><span class="o">.</span><span class="n">BeamName</span>
-<span class="go">&#39;Field 1&#39;</span>
+<span class="go">'Field 1'</span>
 </pre></div>
 </div>
 <p>See <a class="reference internal" href="../../auto_examples/metadata_processing/plot_sequences.html#sphx-glr-auto-examples-metadata-processing-plot-sequences-py"><span class="std std-ref">Working with sequences</span></a>.</p>
 <p>Using DICOM keywords is the recommended way to access data elements, but you
 can also use the tag numbers directly, such as:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Same thing with tag numbers - much harder to read:</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Really should only be used if DICOM keyword not in pydicom&#39;s dictionary</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Really should only be used if DICOM keyword not in pydicom's dictionary</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="p">[</span><span class="mh">0x300a</span><span class="p">,</span> <span class="mh">0xb0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mh">0x300a</span><span class="p">,</span> <span class="mh">0xc2</span><span class="p">]</span><span class="o">.</span><span class="n">value</span>
-<span class="go">&#39;Field 1&#39;</span>
+<span class="go">'Field 1'</span>
 </pre></div>
 </div>
 <p>If you don’t remember or know the exact element tag or keyword,
 <a class="reference internal" href="../../reference/generated/pydicom.dataset.Dataset.html#pydicom.dataset.Dataset" title="pydicom.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> provides a handy
 <a class="reference internal" href="../../reference/generated/pydicom.dataset.Dataset.html#pydicom.dataset.Dataset.dir" title="pydicom.dataset.Dataset.dir"><code class="xref py py-func docutils literal notranslate"><span class="pre">Dataset.dir()</span></code></a> method, useful during interactive
 sessions at the Python prompt:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">dir</span><span class="p">(</span><span class="s2">&quot;pat&quot;</span><span class="p">)</span>
-<span class="go">[&#39;PatientBirthDate&#39;, &#39;PatientID&#39;, &#39;PatientName&#39;, &#39;PatientSetupSequence&#39;, &#39;PatientSex&#39;]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">dir</span><span class="p">(</span><span class="s2">"pat"</span><span class="p">)</span>
+<span class="go">['PatientBirthDate', 'PatientID', 'PatientName', 'PatientSetupSequence', 'PatientSex']</span>
 </pre></div>
 </div>
 <p><a class="reference internal" href="../../reference/generated/pydicom.dataset.Dataset.html#pydicom.dataset.Dataset.dir" title="pydicom.dataset.Dataset.dir"><code class="xref py py-func docutils literal notranslate"><span class="pre">Dataset.dir()</span></code></a> will return any non-private element
@@ -696,18 +696,18 @@ you can use the access the item using either the keyword (for official DICOM
 elements) or tag number:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># reload the data</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">pydicom</span><span class="o">.</span><span class="n">dcmread</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">elem</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;PatientName&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">elem</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">'PatientName'</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">elem</span><span class="o">.</span><span class="n">VR</span><span class="p">,</span> <span class="n">elem</span><span class="o">.</span><span class="n">value</span>
-<span class="go">(&#39;PN&#39;, &#39;Last^First^mid^pre&#39;)</span>
+<span class="go">('PN', 'Last^First^mid^pre')</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># an alternative is to use:</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">elem</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="mh">0x0010</span><span class="p">,</span><span class="mh">0x0010</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">elem</span><span class="o">.</span><span class="n">VR</span><span class="p">,</span> <span class="n">elem</span><span class="o">.</span><span class="n">value</span>
-<span class="go">(&#39;PN&#39;, &#39;Last^First^mid^pre&#39;)</span>
+<span class="go">('PN', 'Last^First^mid^pre')</span>
 </pre></div>
 </div>
 <p>To see whether the <a class="reference internal" href="../../reference/generated/pydicom.dataset.Dataset.html#pydicom.dataset.Dataset" title="pydicom.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a> contains a particular element, use
 the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator with the element’s keyword or tag:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;PatientName&quot;</span> <span class="ow">in</span> <span class="n">ds</span>  <span class="c1"># or (0x0010, 0x0010) in ds</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">"PatientName"</span> <span class="ow">in</span> <span class="n">ds</span>  <span class="c1"># or (0x0010, 0x0010) in ds</span>
 <span class="go">True</span>
 </pre></div>
 </div>
@@ -778,7 +778,7 @@ enforces the expected 4-byte (group, element) structure.</p></li>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span> <span class="o">=</span> <span class="n">Tag</span><span class="p">(</span><span class="mh">0x00100010</span><span class="p">)</span> <span class="c1"># all of these are equivalent</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t2</span> <span class="o">=</span> <span class="n">Tag</span><span class="p">(</span><span class="mh">0x10</span><span class="p">,</span> <span class="mh">0x10</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t3</span> <span class="o">=</span> <span class="n">Tag</span><span class="p">((</span><span class="mh">0x10</span><span class="p">,</span> <span class="mh">0x10</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t4</span> <span class="o">=</span> <span class="n">Tag</span><span class="p">(</span><span class="s2">&quot;PatientName&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t4</span> <span class="o">=</span> <span class="n">Tag</span><span class="p">(</span><span class="s2">"PatientName"</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span>
 <span class="go">(0010,0010)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
@@ -865,8 +865,8 @@ whether the tag represents a private tag (i.e. if group number is odd).</p></li>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -900,7 +900,7 @@ whether the tag represents a private tag (i.e. if group number is odd).</p></li>
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
 </p></div>
       
     </div>
