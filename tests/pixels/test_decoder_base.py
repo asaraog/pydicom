@@ -2564,6 +2564,7 @@ class TestProcessColorSpace:
         assert np.array_equal(out, convert_color_space(arr, "YBR_FULL", "RGB"))
 
 
+@pytest.mark.skipif(not HAVE_NP, reason="NumPy is not available")
 def test_short_encapsulated_pixel_data_raises():
     """Fewer frames than Number of Frames must not raise a bare StopIteration."""
     from pydicom import examples
