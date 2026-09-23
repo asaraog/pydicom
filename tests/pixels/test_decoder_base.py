@@ -2582,3 +2582,7 @@ def test_short_encapsulated_pixel_data_raises():
     )
     with pytest.raises(ValueError, match=msg):
         ds.pixel_array
+
+    decoder = get_decoder(RLELossless)
+    with pytest.raises(ValueError, match=msg):
+        decoder.as_buffer(ds)
